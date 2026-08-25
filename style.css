@@ -1,1070 +1,852 @@
 :root {
-  --bege: #CCBCA6;
-  --dourado: #C59A65;
-  --escuro: #120E0C;
-  --escuro-2: #18110E;
-  --branco: #FFFFFF;
+    --bege: #CCBCA6;
+    --dourado: #C59A65;
+    --escuro: #120E0C;
+    --escuro-2: #18110E;
+    --branco: #FFFFFF;
 }
-
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
-
 
 body {
-  width: 100%;
-  min-height: 100vh;
-  overflow-x: hidden;
-
-  font-family:
-    "Montserrat",
-    Arial,
-    sans-serif;
-
-  color: white;
-  background: #120E0C;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: "Montserrat", Arial, sans-serif;
+    color: white;
+    background: #120E0C;
 }
 
 
-/* =====================================================
+/* ========================================
    FUNDO
-===================================================== */
+======================================== */
 
 .page-background {
-  position: fixed;
-  inset: 0;
+    position: fixed;
+    inset: 0;
+    z-index: -20;
+    pointer-events: none;
 
-  z-index: -20;
-
-  pointer-events: none;
-
-  background:
-    radial-gradient(
-      ellipse at 50% 3%,
-      rgba(143, 84, 58, 0.48) 0%,
-      rgba(88, 50, 37, 0.28) 30%,
-      rgba(43, 27, 21, 0.14) 56%,
-      transparent 79%
-    ),
-    linear-gradient(
-      180deg,
-      #1C130F 0%,
-      #17100D 45%,
-      #100C0A 100%
-    );
+    background:
+        radial-gradient(
+            ellipse at 50% 3%,
+            rgba(149, 84, 58, 0.48) 0%,
+            rgba(88, 50, 37, 0.28) 30%,
+            rgba(43, 27, 21, 0.14) 56%,
+            transparent 79%
+        ),
+        linear-gradient(
+            180deg,
+            #1C130F 0%,
+            #17100D 45%,
+            #100C0A 100%
+        );
 }
 
 
-/* =====================================================
+/* ========================================
    HERO
-===================================================== */
+======================================== */
 
 .hero {
-  position: relative;
+    position: relative;
+    width: 100%;
+    height: 600px;
 
-  width: 100%;
-  height: 760px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
 
-  display: flex;
+    overflow: hidden;
 
-  align-items: flex-start;
-  justify-content: center;
-
-  overflow: hidden;
-
-  background:
-    radial-gradient(
-      ellipse at 50% 30%,
-      #704630 0%,
-      #573526 20%,
-      #3C261D 40%,
-      #281A15 61%,
-      #1A120F 80%,
-      #120E0C 100%
-    );
+    background:
+        radial-gradient(
+            ellipse at 50% 30%,
+            #704630 0%,
+            #573526 20%,
+            #3C261B 40%,
+            #281A15 61%,
+            #1A120F 80%,
+            #120E0C 100%
+        );
 }
-
 
 .hero-light {
-  position: absolute;
+    position: absolute;
 
-  top: -80px;
+    top: -80px;
+    width: 850px;
+    height: 850px;
 
-  width: 850px;
-  height: 850px;
+    border-radius: 50%;
 
-  border-radius: 50%;
+    background:
+        radial-gradient(
+            circle,
+            rgba(211, 153, 103, 0.12) 0%,
+            rgba(158, 94, 65, 0.05) 42%,
+            transparent 74%
+        );
 
-  background:
-    radial-gradient(
-      circle,
-      rgba(211, 153, 103, 0.12) 0%,
-      rgba(158, 94, 65, 0.05) 42%,
-      transparent 74%
-    );
-
-  filter: blur(16px);
+    filter: blur(16px);
 }
-
 
 .hero::after {
-  content: "";
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
 
-  position: absolute;
-  inset: 0;
-
-  z-index: 1;
-
-  pointer-events: none;
-
-  background:
-    linear-gradient(
-      180deg,
-      transparent 0%,
-      transparent 52%,
-      rgba(18, 13, 10, 0.18) 69%,
-      rgba(18, 13, 10, 0.72) 90%,
-      #120E0C 100%
-    );
+    background:
+        linear-gradient(
+            180deg,
+            transparent 0%,
+            transparent 52%,
+            rgba(16, 13, 10, 0.18) 69%,
+            rgba(16, 13, 10, 0.72) 90%,
+            #120E0C 100%
+        );
 }
-
 
 .hero-content {
-  position: relative;
+    position: relative;
+    z-index: 3;
 
-  z-index: 3;
+    width: 100%;
+    padding-top: 78px;
 
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-  padding-top: 78px;
-
-  display: flex;
-  flex-direction: column;
-
-  align-items: center;
-
-  text-align: center;
+    text-align: center;
 }
 
 
-/* =====================================================
+/* ========================================
    SÍMBOLO
-===================================================== */
+======================================== */
 
 .hero-symbol {
-  width:
-    min(
-      310px,
-      44vw
-    );
+    width: min(310px, 44vw);
+    height: auto;
 
-  height: auto;
+    object-fit: contain;
 
-  object-fit: contain;
+    opacity: 0.72;
 
-  opacity: 0.72;
+    filter:
+        invert(76%)
+        sepia(25%)
+        saturate(625%)
+        hue-rotate(350deg)
+        brightness(92%)
+        contrast(87%);
 
-  filter:
-    invert(76%)
-    sepia(25%)
-    saturate(625%)
-    hue-rotate(350deg)
-    brightness(92%)
-    contrast(87%);
-
-  mix-blend-mode: screen;
+    mix-blend-mode: screen;
 }
 
 
-/* =====================================================
+/* ========================================
    BULHÕES
-===================================================== */
+======================================== */
 
 .hero-brand {
-  position: relative;
+    position: relative;
+    z-index: 4;
 
-  z-index: 4;
-
-  margin-top: 14px;
+    /* mantém o nome abaixo do símbolo */
+    margin-top: 34px;
 }
-
 
 .hero-brand h1 {
-  font-family:
-    Georgia,
-    "Times New Roman",
-    serif;
+    font-family: Georgia, "Times New Roman", serif;
 
-  font-size:
-    clamp(
-      48px,
-      5vw,
-      76px
-    );
+    font-size: clamp(48px, 5vw, 76px);
+    line-height: 0.95;
 
-  line-height: 0.95;
+    font-weight: 400;
+    letter-spacing: -2px;
 
-  font-weight: 400;
-
-  letter-spacing: -2px;
-
-  color: #C6A071;
+    color: #C6A071;
 }
-
 
 .hero-brand-subtitle {
-  margin-top: 10px;
+    margin-top: 10px;
 
-  font-size: 9px;
+    font-size: 9px;
+    font-weight: 600;
 
-  font-weight: 600;
+    letter-spacing: 4px;
 
-  letter-spacing: 4px;
-
-  color: #C6A071;
+    color: #C6A071;
 }
-
 
 .hero-phrase {
-  margin-top: 27px;
+    margin-top: 27px;
 
-  font-size:
-    clamp(
-      16px,
-      1.5vw,
-      20px
-    );
+    font-size: clamp(16px, 1.5vw, 20px);
+    font-weight: 400;
 
-  font-weight: 400;
+    letter-spacing: 0.7px;
 
-  letter-spacing: 0.7px;
-
-  color: #D4AC7C;
+    color: #D4AC7C;
 }
 
 
-/* =====================================================
+/* ========================================
    LINKS IMPORTANTES
-===================================================== */
+======================================== */
 
 .links-label {
-  margin-top: 25px;
+    margin-top: 24px;
 
-  display: flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  align-items: center;
-  justify-content: center;
+    gap: 24px;
 
-  gap: 24px;
+    width: min(440px, calc(100% - 40px));
 
-  width:
-    min(
-      440px,
-      calc(100% - 40px)
-    );
+    padding: 17px 25px;
 
-  padding:
-    17px
-    25px;
+    border: 1px solid rgba(197, 154, 101, 0.72);
+    border-radius: 999px;
 
-  border:
-    1px solid
-    rgba(197, 154, 101, 0.72);
+    background: rgba(15, 10, 8, 0.39);
 
-  border-radius: 999px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 
-  background:
-    rgba(15, 10, 8, 0.39);
+    text-decoration: none;
 
-  backdrop-filter:
-    blur(12px);
-
-  -webkit-backdrop-filter:
-    blur(12px);
-
-  text-decoration: none;
-
-  color: white;
-
-  font-size: 11px;
-
-  font-weight: 600;
-
-  letter-spacing: 1.5px;
-}
-
-
-.links-label span {
-  color: var(--dourado);
-
-  font-size: 18px;
-}
-
-
-/* =====================================================
-   LINKS
-===================================================== */
-
-.links-section {
-  position: relative;
-
-  width: 100%;
-  min-height: 100vh;
-
-  padding:
-    0
-    20px
-    46px;
-
-  background:
-    linear-gradient(
-      180deg,
-      #120E0C 0%,
-      #130E0C 34%,
-      #100C0A 100%
-    );
-}
-
-
-.links-section::before {
-  content: "";
-
-  position: absolute;
-
-  top: -210px;
-  left: 0;
-  right: 0;
-
-  height: 450px;
-
-  pointer-events: none;
-
-  background:
-    radial-gradient(
-      ellipse at center top,
-      rgba(118, 68, 47, 0.18) 0%,
-      rgba(66, 40, 30, 0.09) 45%,
-      transparent 76%
-    );
-}
-
-
-.links-wrapper {
-  position: relative;
-
-  z-index: 2;
-
-  width:
-    min(
-      850px,
-      100%
-    );
-
-  margin:
-    0 auto;
-}
-
-
-/* =====================================================
-   CARDS
-===================================================== */
-
-.visual-card {
-  position: relative;
-
-  display: block;
-
-  width: 100%;
-  height: 205px;
-
-  margin-bottom: 16px;
-
-  overflow: hidden;
-
-  border-radius: 30px;
-
-  border:
-    1px solid
-    rgba(204, 188, 166, 0.21);
-
-  background:
-    #17100D;
-
-  color: white;
-
-  text-decoration: none;
-
-  box-shadow:
-    0 18px 55px
-    rgba(0, 0, 0, 0.18);
-
-  isolation: isolate;
-}
-
-
-.card-photo {
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 0;
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-}
-
-
-/* =====================================================
-   CARD 01
-===================================================== */
-
-.card-avaliacao .card-photo {
-  object-position:
-    79% 50%;
-}
-
-
-/* =====================================================
-   CARD 02
-   MAIS ZOOM NO ROSTO
-===================================================== */
-
-.card-paciente {
-  background:
-    radial-gradient(
-      circle at 29% 47%,
-      rgba(132, 75, 54, 0.80) 0%,
-      rgba(93, 52, 39, 0.50) 25%,
-      rgba(54, 33, 27, 0.21) 50%,
-      transparent 68%
-    ),
-
-    linear-gradient(
-      90deg,
-      #422A21 0%,
-      #34221C 38%,
-      #221714 68%,
-      #120E0C 100%
-    );
-}
-
-
-.cutout {
-  position: absolute;
-
-  z-index: 1;
-
-  display: block;
-
-  width: auto;
-
-  max-width: none;
-}
-
-
-.cutout-paciente {
-  height: 270%;
-
-  left: 10%;
-
-  bottom: -112%;
-}
-
-
-/* =====================================================
-   CARD 03
-===================================================== */
-
-.card-tratamentos .card-photo {
-  object-position:
-    54% 60%;
-}
-
-
-/* =====================================================
-   CARD 04
-   MENOS ZOOM, MAIS ROSTO
-===================================================== */
-
-.card-vip {
-  background:
-    linear-gradient(
-      90deg,
-      #5B3A2F 0%,
-      #422B24 35%,
-      #2A1C17 65%,
-      #120E0C 100%
-    );
-}
-
-
-.card-vip .vip-photo {
-  position: absolute;
-
-  z-index: 0;
-
-  top: 0;
-  left: 0;
-
-  width: 52%;
-  height: 100%;
-
-  object-fit: cover;
-
-  object-position: 18% 48%;
-}
-
-
-.card-vip::before {
-  content: "";
-
-  position: absolute;
-
-  z-index: 1;
-
-  top: 0;
-  bottom: 0;
-  left: 0;
-
-  width: 60%;
-
-  pointer-events: none;
-
-  background:
-    linear-gradient(
-      90deg,
-      rgba(18, 12, 10, 0.01) 0%,
-      rgba(18, 12, 10, 0.01) 45%,
-      rgba(22, 14, 12, 0.08) 58%,
-      rgba(21, 14, 11, 0.35) 77%,
-      rgba(18, 14, 12, 0.92) 100%
-    );
-}
-
-
-/* =====================================================
-   CARD 05
-   NÃO MEXER
-===================================================== */
-
-.card-instituto {
-  background:
-    radial-gradient(
-      circle at 73% 43%,
-      rgba(135, 83, 63, 0.78) 0%,
-      rgba(87, 55, 45, 0.46) 30%,
-      rgba(53, 35, 29, 0.20) 53%,
-      transparent 70%
-    ),
-
-    linear-gradient(
-      90deg,
-      #231714 0%,
-      #30201B 36%,
-      #49352F 68%,
-      #6A554E 100%
-    );
-}
-
-
-.cutout-larissa {
-  height: 220%;
-
-  right: 6%;
-
-  bottom: -85%;
-}
-
-
-/* =====================================================
-   OVERLAYS
-===================================================== */
-
-.card-overlay {
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 2;
-}
-
-
-.overlay-left {
-  background:
-    linear-gradient(
-      90deg,
-      rgba(12, 8, 7, 0.99) 0%,
-      rgba(15, 10, 8, 0.93) 13%,
-      rgba(21, 14, 11, 0.80) 27%,
-      rgba(32, 21, 16, 0.57) 40%,
-      rgba(37, 23, 18, 0.33) 52%,
-      rgba(25, 16, 13, 0.14) 66%,
-      transparent 100%
-    );
-}
-
-
-.overlay-right {
-  background:
-    linear-gradient(
-      90deg,
-      transparent 0%,
-      rgba(17, 11, 9, 0.02) 23%,
-      rgba(25, 16, 12, 0.10) 36%,
-      rgba(35, 22, 17, 0.27) 50%,
-      rgba(29, 19, 15, 0.54) 64%,
-      rgba(20, 14, 11, 0.79) 79%,
-      rgba(14, 10, 8, 0.95) 92%,
-      #120E0C 100%
-    );
-}
-
-
-.card-vip .overlay-right {
-  background:
-    linear-gradient(
-      90deg,
-      transparent 0%,
-      transparent 35%,
-      rgba(18, 12, 10, 0.06) 50%,
-      rgba(18, 12, 10, 0.34) 66%,
-      rgba(18, 12, 10, 0.80) 83%,
-      #120E0C 100%
-    );
-}
-
-
-/* =====================================================
-   TEXTO
-===================================================== */
-
-.card-content {
-  position: absolute;
-
-  z-index: 4;
-
-  top: 50%;
-
-  transform:
-    translateY(-50%);
-
-  width: 45%;
-}
-
-
-.card-content-left {
-  left: 42px;
-}
-
-
-.card-content-right {
-  right: 42px;
-}
-
-
-.card-eyebrow {
-  display: block;
-
-  margin-bottom: 9px;
-
-  color: #D1AB7A;
-
-  font-size: 8px;
-
-  font-weight: 600;
-
-  letter-spacing: 2px;
-}
-
-
-.card-content h2 {
-  font-size:
-    clamp(
-      24px,
-      2.4vw,
-      30px
-    );
-
-  line-height: 1.02;
-
-  font-weight: 600;
-
-  letter-spacing: -0.8px;
-}
-
-
-.card-content p {
-  margin-top: 10px;
-
-  font-size: 10px;
-
-  font-weight: 500;
-
-  color:
-    rgba(
-      255,
-      255,
-      255,
-      0.72
-    );
-}
-
-
-.card-line {
-  width: 30px;
-
-  height: 1px;
-
-  margin-top: 14px;
-
-  background:
-    #D1AB7A;
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer {
-  position: relative;
-
-  z-index: 2;
-
-  padding-top: 30px;
-
-  text-align: center;
-
-  color: #B58A5C;
-
-  font-size: 8px;
-
-  letter-spacing: 1.8px;
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 700px) {
-
-  .hero {
-    height: 565px;
-
-    min-height: 565px;
-
-    align-items: flex-start;
-  }
-
-
-  .hero-content {
-    padding-top: 34px;
-  }
-
-
-  .hero-symbol {
-    width:
-      min(
-        218px,
-        56vw
-      );
-  }
-
-
-  .hero-brand {
-    margin-top: 12px;
-  }
-
-
-  .hero-brand h1 {
-    font-size:
-      clamp(
-        40px,
-        11vw,
-        52px
-      );
-  }
-
-
-  .hero-brand-subtitle {
-    margin-top: 6px;
-
-    font-size: 6px;
-
-    letter-spacing: 2.8px;
-  }
-
-
-  .hero-phrase {
-    margin-top: 18px;
+    color: white;
 
     font-size: 11px;
-  }
+    font-weight: 600;
 
+    letter-spacing: 1.5px;
+}
 
-  .links-label {
-    margin-top: 18px;
-
-    width:
-      calc(
-        100% - 44px
-      );
-
-    max-width: 340px;
-
-    padding:
-      13px
-      16px;
-
-    gap: 15px;
-
-    font-size: 8px;
-  }
-
-
-  .links-label span {
-    font-size: 15px;
-  }
-
-
-  .links-section {
-    min-height: auto;
-
-    padding:
-      0
-      12px
-      34px;
-  }
-
-
-  .visual-card {
-    height: 132px;
-
-    margin-bottom: 12px;
-
-    border-radius: 21px;
-  }
-
-
-  .card-content {
-    width: 49%;
-  }
-
-
-  .card-content-left {
-    left: 18px;
-  }
-
-
-  .card-content-right {
-    right: 18px;
-  }
-
-
-  .card-eyebrow {
-    margin-bottom: 6px;
-
-    font-size: 5.8px;
-
-    letter-spacing: 1.2px;
-  }
-
-
-  .card-content h2 {
-    font-size:
-      clamp(
-        16px,
-        4.8vw,
-        20px
-      );
-  }
-
-
-  .card-content p {
-    margin-top: 6px;
-
-    font-size: 7px;
-  }
-
-
-  .card-line {
-    width: 20px;
-
-    margin-top: 9px;
-  }
-
-
-  /* 01 */
-
-  .card-avaliacao .card-photo {
-    object-position:
-      81% 50%;
-  }
-
-
-  /* 02 - MAIS ZOOM */
-
-  .cutout-paciente {
-    height: 260%;
-
-    left: 7%;
-
-    bottom: -107%;
-  }
-
-
-  /* 03 */
-
-  .card-tratamentos .card-photo {
-    object-position:
-      54% 58%;
-  }
-
-
-  /* 04 - MENOS ZOOM */
-
-  .card-vip .vip-photo {
-    width: 54%;
-    height: 100%;
-
-    left: 0;
-    top: 0;
-
-    object-position:
-      18% 47%;
-  }
-
-
-  .card-vip::before {
-    width: 62%;
-  }
-
-
-  /* 05 - NÃO MEXER */
-
-  .cutout-larissa {
-    height: 215%;
-
-    right: 4%;
-
-    bottom: -82%;
-  }
-
-
-  footer {
-    padding-top: 22px;
-
-    font-size: 6.5px;
-  }
-
+.links-label span {
+    color: var(--dourado);
+    font-size: 18px;
 }
 
 
-/* =====================================================
-   CELULARES PEQUENOS
-===================================================== */
+/* ========================================
+   SEÇÃO DOS LINKS
+======================================== */
 
-@media (max-width: 390px) {
+.links-section {
+    position: relative;
 
-  .hero {
-    height: 545px;
+    width: 100%;
+    min-height: 100vh;
 
-    min-height: 545px;
-  }
+    padding: 0 20px 45px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #120E0C 0%,
+            #130E0C 34%,
+            #100C0A 100%
+        );
+}
+
+.links-section::before {
+    content: "";
+
+    position: absolute;
+
+    top: -210px;
+    left: 0;
+    right: 0;
+
+    height: 450px;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at center top,
+            rgba(118, 68, 47, 0.18) 0%,
+            rgba(66, 40, 30, 0.09) 45%,
+            transparent 76%
+        );
+}
+
+.links-wrapper {
+    position: relative;
+    z-index: 2;
+
+    width: min(850px, 100%);
+
+    margin: 0 auto;
+}
 
 
-  .hero-content {
-    padding-top: 28px;
-  }
+/* ========================================
+   CARDS
+======================================== */
 
+.visual-card {
+    position: relative;
 
-  .hero-symbol {
-    width: 56vw;
-  }
+    display: block;
 
+    width: 100%;
+    height: 205px;
 
-  .hero-brand {
-    margin-top: 11px;
-  }
+    margin-bottom: 16px;
 
+    overflow: hidden;
 
-  .hero-brand h1 {
-    font-size: 42px;
-  }
+    border-radius: 30px;
 
+    border: 1px solid rgba(204, 188, 166, 0.21);
 
-  .hero-phrase {
-    margin-top: 17px;
+    background: #17100D;
+
+    color: white;
+
+    text-decoration: none;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.18);
+
+    isolation: isolate;
+}
+
+.card-photo {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.visual-card::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(13, 9, 7, 0.94) 0%,
+            rgba(13, 9, 7, 0.75) 25%,
+            rgba(13, 9, 7, 0.18) 55%,
+            rgba(13, 9, 7, 0.05) 100%
+        );
+}
+
+.card-content {
+    position: relative;
+
+    z-index: 3;
+
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 30px 42px;
+
+    pointer-events: none;
+}
+
+.card-eyebrow {
+    margin-bottom: 8px;
+
+    color: var(--dourado);
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 2.5px;
+
+    text-transform: uppercase;
+}
+
+.card-title {
+    max-width: 390px;
+
+    color: white;
+
+    font-size: clamp(25px, 3vw, 34px);
+
+    line-height: 0.95;
+
+    font-weight: 700;
+
+    letter-spacing: -1.2px;
+
+    text-transform: uppercase;
+}
+
+.card-subtitle {
+    margin-top: 12px;
+
+    color: rgba(255, 255, 255, 0.82);
 
     font-size: 10px;
-  }
+
+    font-weight: 500;
+}
+
+.card-line {
+    width: 32px;
+    height: 2px;
+
+    margin-top: 16px;
+
+    background: var(--dourado);
+}
 
 
-  .links-label {
-    margin-top: 17px;
-  }
+/* ========================================
+   CARD 1
+   QUERO TRANSFORMAR MEU SORRISO
+======================================== */
+
+.visual-card:nth-child(1) .card-photo {
+    object-fit: cover;
+
+    object-position: 62% center;
+}
 
 
-  .visual-card {
-    height: 122px;
-  }
+/* ========================================
+   CARD 2
+   JÁ SOU PACIENTE
+======================================== */
+
+.visual-card:nth-child(2) {
+    background:
+        linear-gradient(
+            90deg,
+            #754A37 0%,
+            #4D3025 43%,
+            #17100D 74%
+        );
+}
+
+.visual-card:nth-child(2) .card-photo {
+    object-fit: contain;
+
+    width: 48%;
+    height: 122%;
+
+    left: 6%;
+    top: -8%;
+
+    object-position: center center;
+}
+
+.visual-card:nth-child(2)::after {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(53, 29, 21, 0.04) 0%,
+            rgba(53, 29, 21, 0.02) 38%,
+            rgba(18, 13, 10, 0.48) 52%,
+            rgba(18, 13, 10, 0.94) 76%,
+            #120E0C 100%
+        );
+}
+
+.visual-card:nth-child(2) .card-content {
+    padding-left: 50%;
+}
 
 
-  .card-content-left {
-    left: 15px;
-  }
+/* ========================================
+   CARD 3
+   CONHEÇA NOSSOS TRATAMENTOS
+======================================== */
+
+.visual-card:nth-child(3) .card-photo {
+    object-fit: cover;
+
+    object-position: center 58%;
+}
+
+.visual-card:nth-child(3)::after {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(15, 10, 8, 0.91) 0%,
+            rgba(15, 10, 8, 0.70) 28%,
+            rgba(15, 10, 8, 0.15) 58%,
+            rgba(15, 10, 8, 0.03) 100%
+        );
+}
 
 
-  .card-content-right {
-    right: 15px;
-  }
+/* ========================================
+   CARD 4
+   GRUPO VIP
+   MENOS ZOOM PARA APARECER MAIS O ROSTO
+======================================== */
+
+.visual-card:nth-child(4) .card-photo {
+    object-fit: cover;
+
+    /*
+       Quanto MENOR esse percentual,
+       MAIS do rosto aparece.
+    */
+    width: 100%;
+    height: 100%;
+
+    object-position: 30% center;
+
+    transform: scale(0.78);
+    transform-origin: left center;
+}
+
+.visual-card:nth-child(4) {
+    background:
+        linear-gradient(
+            90deg,
+            #D0C6C2 0%,
+            #8C6252 34%,
+            #43281F 61%,
+            #17100D 100%
+        );
+}
+
+.visual-card:nth-child(4)::after {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(15, 10, 8, 0.02) 0%,
+            rgba(15, 10, 8, 0.02) 38%,
+            rgba(15, 10, 8, 0.36) 53%,
+            rgba(15, 10, 8, 0.88) 76%,
+            #120E0C 100%
+        );
+}
+
+.visual-card:nth-child(4) .card-content {
+    padding-left: 50%;
+}
 
 
-  .card-content h2 {
-    font-size: 16px;
-  }
+/* ========================================
+   CARD 5
+   INSTITUTO BULHÕES
+   NÃO MEXER
+======================================== */
+
+.visual-card:nth-child(5) {
+    background:
+        linear-gradient(
+            90deg,
+            #17100D 0%,
+            #24150F 43%,
+            #704B3D 100%
+        );
+}
+
+.visual-card:nth-child(5) .card-photo {
+    object-fit: contain;
+
+    width: 47%;
+    height: 132%;
+
+    left: auto;
+    right: 1%;
+
+    top: -13%;
+
+    object-position: center center;
+}
+
+.visual-card:nth-child(5)::after {
+    background:
+        linear-gradient(
+            90deg,
+            #120E0C 0%,
+            rgba(18, 14, 12, 0.96) 34%,
+            rgba(18, 14, 12, 0.56) 60%,
+            rgba(18, 14, 12, 0.05) 100%
+        );
+}
 
 
-  /* 02 */
+/* ========================================
+   FOOTER
+======================================== */
 
-  .cutout-paciente {
-    height: 255%;
+.footer {
+    width: 100%;
 
-    left: 5%;
+    padding: 18px 20px 28px;
 
-    bottom: -104%;
-  }
+    text-align: center;
 
+    color: var(--dourado);
 
-  /* 04 */
+    font-size: 8px;
 
-  .card-vip .vip-photo {
-    width: 56%;
+    letter-spacing: 2px;
 
-    object-position:
-      18% 47%;
-  }
+    text-transform: uppercase;
+}
 
 
-  /* 05 - NÃO MEXER */
+/* ========================================
+   HOVER
+======================================== */
 
-  .cutout-larissa {
-    height: 210%;
+@media (hover: hover) {
 
-    right: 2%;
+    .visual-card {
+        transition:
+            transform 0.25s ease,
+            border-color 0.25s ease;
+    }
 
-    bottom: -79%;
-  }
+    .visual-card:hover {
+        transform: translateY(-3px);
 
+        border-color: rgba(197, 154, 101, 0.48);
+    }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .hero {
+        height: 510px;
+    }
+
+    .hero-content {
+        padding-top: 55px;
+    }
+
+    .hero-symbol {
+        width: 190px;
+    }
+
+    .hero-brand {
+        margin-top: 28px;
+    }
+
+    .hero-brand h1 {
+        font-size: 44px;
+    }
+
+    .hero-brand-subtitle {
+        font-size: 7px;
+
+        letter-spacing: 2.7px;
+    }
+
+    .hero-phrase {
+        margin-top: 19px;
+
+        font-size: 14px;
+    }
+
+    .links-label {
+        margin-top: 20px;
+
+        width: min(330px, calc(100% - 36px));
+
+        padding: 14px 20px;
+
+        font-size: 9px;
+    }
+
+    .links-section {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .visual-card {
+        height: 150px;
+
+        margin-bottom: 12px;
+
+        border-radius: 22px;
+    }
+
+    .card-content {
+        padding: 22px 25px;
+    }
+
+    .card-title {
+        font-size: 22px;
+    }
+
+    .card-eyebrow {
+        font-size: 7px;
+    }
+
+    .card-subtitle {
+        font-size: 8px;
+    }
+
+
+    /* CARD 1 */
+
+    .visual-card:nth-child(1) .card-photo {
+        object-position: 64% center;
+    }
+
+
+    /* CARD 2 */
+
+    .visual-card:nth-child(2) .card-photo {
+        width: 52%;
+        height: 125%;
+
+        left: 1%;
+        top: -9%;
+    }
+
+    .visual-card:nth-child(2) .card-content {
+        padding-left: 49%;
+    }
+
+
+    /* CARD 3 */
+
+    .visual-card:nth-child(3) .card-photo {
+        object-position: center 58%;
+    }
+
+
+    /* CARD 4 — MENOS ZOOM */
+
+    .visual-card:nth-child(4) .card-photo {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: 27% center;
+
+        transform: scale(0.74);
+        transform-origin: left center;
+    }
+
+    .visual-card:nth-child(4) .card-content {
+        padding-left: 49%;
+    }
+
+
+    /* CARD 5 — NÃO MEXER */
+
+    .visual-card:nth-child(5) .card-photo {
+        width: 48%;
+        height: 132%;
+
+        right: 0;
+        top: -13%;
+    }
+}
+
+
+/* ========================================
+   CELULARES PEQUENOS
+======================================== */
+
+@media (max-width: 480px) {
+
+    .hero {
+        height: 475px;
+    }
+
+    .hero-symbol {
+        width: 165px;
+    }
+
+    .hero-brand {
+        margin-top: 25px;
+    }
+
+    .hero-brand h1 {
+        font-size: 38px;
+    }
+
+    .hero-phrase {
+        font-size: 13px;
+    }
+
+    .visual-card {
+        height: 138px;
+    }
+
+    .card-content {
+        padding: 18px 20px;
+    }
+
+    .card-title {
+        font-size: 19px;
+    }
+
+
+    /* CARD 2 */
+
+    .visual-card:nth-child(2) .card-photo {
+        width: 54%;
+        height: 125%;
+
+        left: -2%;
+    }
+
+
+    /* CARD 4 — AINDA MENOS ZOOM */
+
+    .visual-card:nth-child(4) .card-photo {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: 25% center;
+
+        transform: scale(0.70);
+        transform-origin: left center;
+    }
+
+
+    /* CARD 5 — NÃO MEXER */
+
+    .visual-card:nth-child(5) .card-photo {
+        width: 50%;
+        height: 132%;
+
+        right: -1%;
+        top: -13%;
+    }
 }
