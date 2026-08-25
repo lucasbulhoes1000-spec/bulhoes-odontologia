@@ -55,7 +55,6 @@ body {
       rgba(43, 27, 21, 0.14) 56%,
       transparent 79%
     ),
-
     linear-gradient(
       180deg,
       #1C130F 0%,
@@ -427,7 +426,7 @@ body {
 
 
 /* =====================================================
-   CARD 01 - AVALIAÇÃO
+   CARD 01
 ===================================================== */
 
 .card-avaliacao .card-photo {
@@ -437,7 +436,8 @@ body {
 
 
 /* =====================================================
-   CARD 02 - PACIENTE
+   CARD 02
+   MAIS ZOOM NO ROSTO
 ===================================================== */
 
 .card-paciente {
@@ -474,16 +474,16 @@ body {
 
 
 .cutout-paciente {
-  height: 215%;
+  height: 238%;
 
   left: 11%;
 
-  bottom: -77%;
+  bottom: -93%;
 }
 
 
 /* =====================================================
-   CARD 03 - TRATAMENTOS
+   CARD 03
 ===================================================== */
 
 .card-tratamentos .card-photo {
@@ -493,8 +493,8 @@ body {
 
 
 /* =====================================================
-   CARD 04 - VIP
-   AJUSTADO PARA MOSTRAR O ROSTO INTEIRO
+   CARD 04
+   MOSTRAR MAIS DO ROSTO
 ===================================================== */
 
 .card-vip {
@@ -514,15 +514,20 @@ body {
 
   z-index: 0;
 
-  top: 0;
-  left: 0;
+  top: -10%;
+  left: -2%;
 
-  width: 62%;
-  height: 100%;
+  width: 67%;
+  height: 120%;
 
   object-fit: cover;
 
-  object-position: 16% 46%;
+  /*
+    desloca para pegar mais:
+    testa + olhos + nariz + sorriso
+  */
+
+  object-position: 17% 36%;
 }
 
 
@@ -537,25 +542,25 @@ body {
   bottom: 0;
   left: 0;
 
-  width: 68%;
+  width: 71%;
 
   pointer-events: none;
 
   background:
     linear-gradient(
       90deg,
-      rgba(18, 12, 10, 0.02) 0%,
-      rgba(18, 12, 10, 0.02) 42%,
-      rgba(22, 14, 12, 0.12) 58%,
-      rgba(21, 14, 11, 0.45) 75%,
+      rgba(18, 12, 10, 0.01) 0%,
+      rgba(18, 12, 10, 0.01) 48%,
+      rgba(22, 14, 12, 0.10) 60%,
+      rgba(21, 14, 11, 0.40) 78%,
       rgba(18, 14, 12, 0.92) 100%
     );
 }
 
 
 /* =====================================================
-   CARD 05 - INSTITUTO
-   NÃO MEXER
+   CARD 05
+   CONGELADO — NÃO MEXER
 ===================================================== */
 
 .card-instituto {
@@ -631,20 +636,15 @@ body {
 }
 
 
-/*
-  No card VIP reduzimos a interferência do overlay
-  sobre o rosto.
-*/
-
 .card-vip .overlay-right {
   background:
     linear-gradient(
       90deg,
       transparent 0%,
-      transparent 38%,
-      rgba(18, 12, 10, 0.08) 50%,
-      rgba(18, 12, 10, 0.40) 65%,
-      rgba(18, 12, 10, 0.82) 82%,
+      transparent 41%,
+      rgba(18, 12, 10, 0.07) 53%,
+      rgba(18, 12, 10, 0.38) 67%,
+      rgba(18, 12, 10, 0.82) 83%,
       #120E0C 100%
     );
 }
@@ -919,14 +919,14 @@ footer {
   }
 
 
-  /* 02 */
+  /* 02 - MAIS ZOOM */
 
   .cutout-paciente {
-    height: 210%;
+    height: 232%;
 
     left: 8%;
 
-    bottom: -75%;
+    bottom: -90%;
   }
 
 
@@ -938,27 +938,26 @@ footer {
   }
 
 
-  /* 04 - ROSTO INTEIRO */
+  /* 04 - MAIS ROSTO */
 
   .card-vip .vip-photo {
-    width: 65%;
-    height: 100%;
+    top: -8%;
+    left: -2%;
 
-    left: 0;
-    top: 0;
+    width: 69%;
+    height: 118%;
 
-    object-fit: cover;
-
-    object-position: 15% 46%;
+    object-position:
+      16% 35%;
   }
 
 
   .card-vip::before {
-    width: 70%;
+    width: 73%;
   }
 
 
-  /* 05 - NÃO MEXER */
+  /* 05 - CONGELADO */
 
   .cutout-larissa {
     height: 215%;
@@ -1043,25 +1042,32 @@ footer {
   }
 
 
+  /* 02 */
+
   .cutout-paciente {
-    height: 205%;
+    height: 228%;
 
     left: 6%;
 
-    bottom: -73%;
+    bottom: -87%;
   }
 
 
-  /* CARD 04 - ROSTO INTEIRO */
+  /* 04 */
 
   .card-vip .vip-photo {
-    width: 67%;
+    top: -7%;
+    left: -2%;
 
-    object-position: 14% 46%;
+    width: 71%;
+    height: 116%;
+
+    object-position:
+      15% 34%;
   }
 
 
-  /* CARD 05 - NÃO MEXER */
+  /* 05 - NÃO MEXER */
 
   .cutout-larissa {
     height: 210%;
