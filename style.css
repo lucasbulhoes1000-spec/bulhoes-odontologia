@@ -20,7 +20,12 @@ body {
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
-  font-family: "Montserrat", Arial, sans-serif;
+
+  font-family:
+    "Montserrat",
+    Arial,
+    sans-serif;
+
   color: white;
   background: #120E0C;
 }
@@ -33,7 +38,9 @@ body {
 .page-background {
   position: fixed;
   inset: 0;
+
   z-index: -20;
+
   pointer-events: none;
 
   background:
@@ -59,10 +66,12 @@ body {
 
 .hero {
   position: relative;
+
   width: 100%;
   height: 760px;
 
   display: flex;
+
   align-items: flex-start;
   justify-content: center;
 
@@ -82,6 +91,7 @@ body {
 
 .hero-light {
   position: absolute;
+
   top: -80px;
 
   width: 850px;
@@ -123,13 +133,16 @@ body {
 
 .hero-content {
   position: relative;
+
   z-index: 3;
 
   width: 100%;
+
   padding-top: 78px;
 
   display: flex;
   flex-direction: column;
+
   align-items: center;
 
   text-align: center;
@@ -141,7 +154,12 @@ body {
 ===================================================== */
 
 .hero-symbol {
-  width: min(310px, 44vw);
+  width:
+    min(
+      310px,
+      44vw
+    );
+
   height: auto;
 
   object-fit: contain;
@@ -166,17 +184,29 @@ body {
 
 .hero-brand {
   position: relative;
+
   z-index: 4;
+
   margin-top: 14px;
 }
 
 .hero-brand h1 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
 
-  font-size: clamp(48px, 5vw, 76px);
+  font-size:
+    clamp(
+      48px,
+      5vw,
+      76px
+    );
+
   line-height: 0.95;
 
   font-weight: 400;
+
   letter-spacing: -2px;
 
   color: #C6A071;
@@ -186,7 +216,9 @@ body {
   margin-top: 10px;
 
   font-size: 9px;
+
   font-weight: 600;
+
   letter-spacing: 4px;
 
   color: #C6A071;
@@ -195,8 +227,15 @@ body {
 .hero-phrase {
   margin-top: 27px;
 
-  font-size: clamp(16px, 1.5vw, 20px);
+  font-size:
+    clamp(
+      16px,
+      1.5vw,
+      20px
+    );
+
   font-weight: 400;
+
   letter-spacing: 0.7px;
 
   color: #D4AC7C;
@@ -211,34 +250,51 @@ body {
   margin-top: 25px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
   gap: 24px;
 
-  width: min(440px, calc(100% - 40px));
+  width:
+    min(
+      440px,
+      calc(100% - 40px)
+    );
 
-  padding: 17px 25px;
+  padding:
+    17px
+    25px;
 
-  border: 1px solid rgba(197, 154, 101, 0.72);
+  border:
+    1px solid
+    rgba(197, 154, 101, 0.72);
+
   border-radius: 999px;
 
-  background: rgba(15, 10, 8, 0.39);
+  background:
+    rgba(15, 10, 8, 0.39);
 
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter:
+    blur(12px);
+
+  -webkit-backdrop-filter:
+    blur(12px);
 
   text-decoration: none;
 
   color: white;
 
   font-size: 11px;
+
   font-weight: 600;
+
   letter-spacing: 1.5px;
 }
 
 .links-label span {
   color: var(--dourado);
+
   font-size: 18px;
 }
 
@@ -253,7 +309,10 @@ body {
   width: 100%;
   min-height: 100vh;
 
-  padding: 0 20px 46px;
+  padding:
+    0
+    20px
+    46px;
 
   background:
     linear-gradient(
@@ -291,8 +350,14 @@ body {
 
   z-index: 2;
 
-  width: min(850px, 100%);
-  margin: 0 auto;
+  width:
+    min(
+      850px,
+      100%
+    );
+
+  margin:
+    0 auto;
 }
 
 
@@ -314,14 +379,20 @@ body {
 
   border-radius: 30px;
 
-  border: 1px solid rgba(204, 188, 166, 0.21);
+  border:
+    1px solid
+    rgba(204, 188, 166, 0.21);
 
-  background: #17100D;
+  background:
+    #17100D;
 
   color: white;
+
   text-decoration: none;
 
-  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.18);
+  box-shadow:
+    0 18px 55px
+    rgba(0, 0, 0, 0.18);
 
   isolation: isolate;
 }
@@ -345,35 +416,37 @@ body {
 ===================================================== */
 
 .card-avaliacao .card-photo {
-  object-position: 79% 50%;
+  object-position:
+    79% 50%;
 }
 
 
 /* =====================================================
    CARD 02
-   NOVA FOTO + MENOS ZOOM + DEGRADÊ
+   FOTO MAIS ABERTA + COLADA NA BORDA ESQUERDA
 ===================================================== */
 
 .card-paciente {
   background:
     radial-gradient(
-      circle at 28% 48%,
-      rgba(112, 67, 50, 0.80) 0%,
-      rgba(79, 46, 36, 0.48) 29%,
-      rgba(48, 29, 24, 0.24) 52%,
+      circle at 27% 47%,
+      rgba(111, 67, 51, 0.82) 0%,
+      rgba(79, 47, 37, 0.53) 28%,
+      rgba(50, 31, 26, 0.25) 51%,
       transparent 68%
     ),
+
     linear-gradient(
       90deg,
-      #4A3027 0%,
-      #34221C 39%,
+      #4C3027 0%,
+      #35231D 39%,
       #221714 68%,
       #120E0C 100%
     );
 }
 
 
-/* foto antiga removida */
+/* some a imagem antiga */
 
 .cutout-paciente {
   display: none;
@@ -383,8 +456,12 @@ body {
 /*
   FOTO NOVA
 
-  O bloco tem proporção mais horizontal antes da rotação.
-  Isso faz aparecer MAIS do rosto e reduz bastante o zoom.
+  Está maior que o card de propósito,
+  mas com SCALE MENOR para mostrar mais:
+  cabelo + olho + sorriso.
+
+  LEFT negativo remove totalmente
+  o espaço da borda esquerda.
 */
 
 .card-paciente::before {
@@ -394,31 +471,37 @@ body {
 
   z-index: 1;
 
-  width: 330px;
-  height: 225px;
+  width: 390px;
+  height: 390px;
 
-  left: 4%;
+  left: -105px;
   top: 50%;
 
   background-image:
     url("paciente-card2.jpg");
 
   background-repeat: no-repeat;
-  background-size: cover;
+
+  background-size: contain;
 
   background-position:
-    50% 48%;
+    center center;
 
   transform:
     translateY(-50%)
-    rotate(-90deg);
+    rotate(-90deg)
+    scale(0.88);
 
-  transform-origin: center;
+  transform-origin:
+    center center;
 }
 
 
 /*
-  GRADIENTE FOTO → CARD
+  DEGRADÊ DA FOTO PARA O CARD
+
+  Começa transparente para preservar o rosto
+  e vai entrando gradualmente no marrom/preto.
 */
 
 .card-paciente::after {
@@ -436,13 +519,14 @@ body {
     linear-gradient(
       90deg,
       transparent 0%,
-      transparent 26%,
-      rgba(34, 21, 17, 0.05) 35%,
-      rgba(34, 21, 17, 0.18) 43%,
-      rgba(29, 19, 15, 0.44) 51%,
-      rgba(23, 15, 12, 0.72) 61%,
-      rgba(18, 14, 12, 0.92) 73%,
-      #120E0C 87%,
+      transparent 29%,
+      rgba(47, 29, 24, 0.02) 34%,
+      rgba(45, 28, 23, 0.10) 40%,
+      rgba(39, 24, 20, 0.26) 47%,
+      rgba(31, 20, 16, 0.49) 55%,
+      rgba(24, 16, 13, 0.72) 63%,
+      rgba(18, 13, 11, 0.91) 74%,
+      #120E0C 88%,
       #120E0C 100%
     );
 }
@@ -453,7 +537,8 @@ body {
 ===================================================== */
 
 .card-tratamentos .card-photo {
-  object-position: 54% 60%;
+  object-position:
+    54% 60%;
 }
 
 
@@ -486,7 +571,8 @@ body {
 
   object-fit: cover;
 
-  object-position: 22% 43%;
+  object-position:
+    22% 43%;
 }
 
 .card-vip::before {
@@ -518,7 +604,7 @@ body {
 
 /* =====================================================
    CARD 05
-   RESTAURADO PARA A VERSÃO CORRETA
+   MANTIDO
 ===================================================== */
 
 .card-instituto {
@@ -539,12 +625,6 @@ body {
       #6A554E 100%
     );
 }
-
-
-/*
-  ESTA É A POSIÇÃO CORRETA DA LARISSA:
-  DIREITA DO CARD, LONGE DA ESCRITA.
-*/
 
 .cutout-larissa {
   position: absolute;
@@ -607,12 +687,7 @@ body {
 }
 
 
-/*
-  CARD 2
-
-  reduzimos o overlay original porque agora
-  o degradê principal está no ::after
-*/
+/* overlay exclusivo do card 2 */
 
 .card-paciente .overlay-right {
   z-index: 3;
@@ -621,11 +696,12 @@ body {
     linear-gradient(
       90deg,
       transparent 0%,
-      transparent 38%,
-      rgba(18, 12, 10, 0.04) 47%,
-      rgba(18, 12, 10, 0.25) 57%,
-      rgba(18, 12, 10, 0.68) 72%,
-      rgba(18, 12, 10, 0.93) 87%,
+      transparent 36%,
+      rgba(18, 12, 10, 0.03) 43%,
+      rgba(18, 12, 10, 0.16) 51%,
+      rgba(18, 12, 10, 0.42) 60%,
+      rgba(18, 12, 10, 0.73) 70%,
+      rgba(18, 12, 10, 0.93) 84%,
       #120E0C 100%
     );
 }
@@ -656,7 +732,8 @@ body {
 
   top: 50%;
 
-  transform: translateY(-50%);
+  transform:
+    translateY(-50%);
 
   width: 45%;
 }
@@ -677,13 +754,19 @@ body {
   color: #D1AB7A;
 
   font-size: 8px;
+
   font-weight: 600;
 
   letter-spacing: 2px;
 }
 
 .card-content h2 {
-  font-size: clamp(24px, 2.4vw, 30px);
+  font-size:
+    clamp(
+      24px,
+      2.4vw,
+      30px
+    );
 
   line-height: 1.02;
 
@@ -699,16 +782,24 @@ body {
 
   font-weight: 500;
 
-  color: rgba(255, 255, 255, 0.72);
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.72
+    );
 }
 
 .card-line {
   width: 30px;
+
   height: 1px;
 
   margin-top: 14px;
 
-  background: #D1AB7A;
+  background:
+    #D1AB7A;
 }
 
 
@@ -741,6 +832,7 @@ footer {
 
   .hero {
     height: 565px;
+
     min-height: 565px;
 
     align-items: flex-start;
@@ -751,7 +843,11 @@ footer {
   }
 
   .hero-symbol {
-    width: min(218px, 56vw);
+    width:
+      min(
+        218px,
+        56vw
+      );
   }
 
   .hero-brand {
@@ -759,7 +855,12 @@ footer {
   }
 
   .hero-brand h1 {
-    font-size: clamp(40px, 11vw, 52px);
+    font-size:
+      clamp(
+        40px,
+        11vw,
+        52px
+      );
   }
 
   .hero-brand-subtitle {
@@ -779,10 +880,16 @@ footer {
   .links-label {
     margin-top: 18px;
 
-    width: calc(100% - 44px);
+    width:
+      calc(
+        100% - 44px
+      );
+
     max-width: 340px;
 
-    padding: 13px 16px;
+    padding:
+      13px
+      16px;
 
     gap: 15px;
 
@@ -796,7 +903,10 @@ footer {
   .links-section {
     min-height: auto;
 
-    padding: 0 12px 34px;
+    padding:
+      0
+      12px
+      34px;
   }
 
   .visual-card {
@@ -828,7 +938,12 @@ footer {
   }
 
   .card-content h2 {
-    font-size: clamp(16px, 4.8vw, 20px);
+    font-size:
+      clamp(
+        16px,
+        4.8vw,
+        20px
+      );
   }
 
   .card-content p {
@@ -844,41 +959,48 @@ footer {
   }
 
 
-  /* CARD 01 */
+  /* 01 */
 
   .card-avaliacao .card-photo {
-    object-position: 81% 50%;
+    object-position:
+      81% 50%;
   }
 
 
-  /* CARD 02
-     MENOS ZOOM */
+  /* =====================================================
+     CARD 02 MOBILE
+     MAIS ABERTO E SEM ESPAÇO NA ESQUERDA
+  ===================================================== */
 
   .card-paciente::before {
-    width: 225px;
-    height: 155px;
+    width: 265px;
+    height: 265px;
 
-    left: 3%;
+    left: -78px;
     top: 50%;
 
-    background-size: cover;
+    background-size:
+      contain;
 
-    background-position: 50% 48%;
+    background-position:
+      center center;
 
     transform:
       translateY(-50%)
-      rotate(-90deg);
+      rotate(-90deg)
+      scale(0.88);
   }
 
 
-  /* CARD 03 */
+  /* 03 */
 
   .card-tratamentos .card-photo {
-    object-position: 54% 58%;
+    object-position:
+      54% 58%;
   }
 
 
-  /* CARD 04 - NÃO MEXER */
+  /* 04 */
 
   .card-vip .vip-photo {
     width: 60%;
@@ -889,7 +1011,8 @@ footer {
 
     object-fit: cover;
 
-    object-position: 22% 43%;
+    object-position:
+      22% 43%;
   }
 
   .card-vip::before {
@@ -897,7 +1020,7 @@ footer {
   }
 
 
-  /* CARD 05 - RESTAURADO */
+  /* 05 */
 
   .cutout-larissa {
     position: absolute;
@@ -919,6 +1042,7 @@ footer {
 
     font-size: 6.5px;
   }
+
 }
 
 
@@ -930,6 +1054,7 @@ footer {
 
   .hero {
     height: 545px;
+
     min-height: 545px;
   }
 
@@ -976,27 +1101,31 @@ footer {
   }
 
 
-  /* CARD 02
-     AINDA MAIS ABERTO */
+  /* =====================================================
+     CARD 02 CELULAR PEQUENO
+  ===================================================== */
 
   .card-paciente::before {
-    width: 205px;
-    height: 142px;
+    width: 245px;
+    height: 245px;
 
-    left: 2%;
+    left: -73px;
     top: 50%;
 
-    background-size: cover;
+    background-size:
+      contain;
 
-    background-position: 50% 48%;
+    background-position:
+      center center;
 
     transform:
       translateY(-50%)
-      rotate(-90deg);
+      rotate(-90deg)
+      scale(0.86);
   }
 
 
-  /* CARD 04 - NÃO MEXER */
+  /* 04 */
 
   .card-vip .vip-photo {
     width: 62%;
@@ -1007,11 +1136,12 @@ footer {
 
     object-fit: cover;
 
-    object-position: 22% 43%;
+    object-position:
+      22% 43%;
   }
 
 
-  /* CARD 05 - RESTAURADO */
+  /* 05 */
 
   .cutout-larissa {
     position: absolute;
@@ -1026,4 +1156,5 @@ footer {
 
     display: block;
   }
+
 }
