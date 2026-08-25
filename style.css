@@ -473,14 +473,6 @@ body {
 }
 
 
-/*
-  MAIS ZOOM NO ROSTO.
-
-  A pessoa fica aproximadamente
-  centralizada no espaço da esquerda,
-  antes do texto começar.
-*/
-
 .cutout-paciente {
   height: 215%;
 
@@ -502,34 +494,68 @@ body {
 
 /* =====================================================
    CARD 04 - VIP
+   AJUSTADO PARA MOSTRAR O ROSTO INTEIRO
 ===================================================== */
 
-/*
-  O arquivo original tem a paciente na esquerda
-  e o sorriso/lentes na direita.
+.card-vip {
+  background:
+    linear-gradient(
+      90deg,
+      #5B3A2F 0%,
+      #422B24 35%,
+      #2A1C17 65%,
+      #120E0C 100%
+    );
+}
 
-  Aqui não usamos zoom exagerado.
-
-  A imagem é ampliada apenas o suficiente
-  para mostrar rosto + olhos azuis.
-*/
 
 .card-vip .vip-photo {
-  width: 100%;
-  height: 100%;
+  position: absolute;
 
-  left: 0;
+  z-index: 0;
+
   top: 0;
+  left: 0;
+
+  width: 62%;
+  height: 100%;
 
   object-fit: cover;
 
-  object-position:
-    13% 18%;
+  object-position: 16% 46%;
+}
+
+
+.card-vip::before {
+  content: "";
+
+  position: absolute;
+
+  z-index: 1;
+
+  top: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 68%;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(18, 12, 10, 0.02) 0%,
+      rgba(18, 12, 10, 0.02) 42%,
+      rgba(22, 14, 12, 0.12) 58%,
+      rgba(21, 14, 11, 0.45) 75%,
+      rgba(18, 14, 12, 0.92) 100%
+    );
 }
 
 
 /* =====================================================
    CARD 05 - INSTITUTO
+   NÃO MEXER
 ===================================================== */
 
 .card-instituto {
@@ -551,13 +577,6 @@ body {
     );
 }
 
-
-/*
-  MAIS ZOOM NA LARI.
-
-  Rosto fica entre a área central
-  e a borda direita do card.
-*/
 
 .cutout-larissa {
   height: 220%;
@@ -607,6 +626,25 @@ body {
       rgba(29, 19, 15, 0.54) 64%,
       rgba(20, 14, 11, 0.79) 79%,
       rgba(14, 10, 8, 0.95) 92%,
+      #120E0C 100%
+    );
+}
+
+
+/*
+  No card VIP reduzimos a interferência do overlay
+  sobre o rosto.
+*/
+
+.card-vip .overlay-right {
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      transparent 38%,
+      rgba(18, 12, 10, 0.08) 50%,
+      rgba(18, 12, 10, 0.40) 65%,
+      rgba(18, 12, 10, 0.82) 82%,
       #120E0C 100%
     );
 }
@@ -900,19 +938,27 @@ footer {
   }
 
 
-  /* 04 */
+  /* 04 - ROSTO INTEIRO */
 
   .card-vip .vip-photo {
-    width: 100%;
+    width: 65%;
+    height: 100%;
 
     left: 0;
+    top: 0;
 
-    object-position:
-      11% 17%;
+    object-fit: cover;
+
+    object-position: 15% 46%;
   }
 
 
-  /* 05 */
+  .card-vip::before {
+    width: 70%;
+  }
+
+
+  /* 05 - NÃO MEXER */
 
   .cutout-larissa {
     height: 215%;
@@ -1006,18 +1052,23 @@ footer {
   }
 
 
+  /* CARD 04 - ROSTO INTEIRO */
+
+  .card-vip .vip-photo {
+    width: 67%;
+
+    object-position: 14% 46%;
+  }
+
+
+  /* CARD 05 - NÃO MEXER */
+
   .cutout-larissa {
     height: 210%;
 
     right: 2%;
 
     bottom: -79%;
-  }
-
-
-  .card-vip .vip-photo {
-    object-position:
-      10% 16%;
   }
 
 }
