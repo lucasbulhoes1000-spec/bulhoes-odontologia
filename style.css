@@ -358,8 +358,6 @@ body {
 
 /* =====================================================
    CARD 02
-   ÚNICO CARD ALTERADO
-   MAIS OLHO + MAIS CABELO + ROSTO MAIS ABERTO
 ===================================================== */
 
 .card-paciente {
@@ -405,7 +403,7 @@ body {
   transform:
     translateY(-50%)
     rotate(-90deg)
-    scale(0.66);
+    scale(0.41);
 
   transform-origin: center center;
 }
@@ -448,7 +446,6 @@ body {
 
 /* =====================================================
    CARD 04
-   MANTIDO EXATAMENTE
 ===================================================== */
 
 .card-vip {
@@ -506,7 +503,6 @@ body {
 
 /* =====================================================
    CARD 05
-   MANTIDO EXATAMENTE
 ===================================================== */
 
 .card-instituto {
@@ -818,10 +814,7 @@ footer {
   }
 
 
-  /* =====================================================
-     CARD 02 MOBILE
-     MAIS ABERTO
-  ===================================================== */
+  /* CARD 02 MOBILE */
 
   .card-paciente::before {
     width: 350px;
@@ -836,7 +829,7 @@ footer {
     transform:
       translateY(-50%)
       rotate(-90deg)
-      scale(0.66);
+      scale(0.41);
 
     transform-origin: center center;
   }
@@ -945,9 +938,7 @@ footer {
   }
 
 
-  /* =====================================================
-     CARD 02 CELULAR PEQUENO
-  ===================================================== */
+  /* CARD 02 CELULAR PEQUENO */
 
   .card-paciente::before {
     width: 325px;
@@ -962,7 +953,7 @@ footer {
     transform:
       translateY(-50%)
       rotate(-90deg)
-      scale(0.64);
+      scale(0.41);
 
     transform-origin: center center;
   }
