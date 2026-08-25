@@ -148,7 +148,7 @@ body {
 
   width: 100%;
 
-  padding-top: 80px;
+  padding-top: 78px;
 
   display: flex;
   flex-direction: column;
@@ -166,8 +166,8 @@ body {
 .hero-symbol {
   width:
     min(
-      315px,
-      45vw
+      310px,
+      44vw
     );
 
   height: auto;
@@ -197,12 +197,7 @@ body {
 
   z-index: 4;
 
-  /*
-    Antes estava sobrepondo o símbolo.
-    Agora desce de verdade.
-  */
-
-  margin-top: -4px;
+  margin-top: 14px;
 }
 
 
@@ -243,7 +238,7 @@ body {
 
 
 .hero-phrase {
-  margin-top: 28px;
+  margin-top: 27px;
 
   font-size:
     clamp(
@@ -265,7 +260,7 @@ body {
 ===================================================== */
 
 .links-label {
-  margin-top: 26px;
+  margin-top: 25px;
 
   display: flex;
 
@@ -329,12 +324,8 @@ body {
 
   min-height: 100vh;
 
-  /*
-    praticamente cola os cards na hero
-  */
-
   padding:
-    6px
+    0
     20px
     46px;
 
@@ -455,11 +446,11 @@ body {
 .card-paciente {
   background:
     radial-gradient(
-      circle at 20% 46%,
-      rgba(126, 72, 53, 0.70) 0%,
-      rgba(91, 51, 39, 0.42) 24%,
-      rgba(52, 32, 27, 0.20) 49%,
-      transparent 66%
+      circle at 23% 48%,
+      rgba(128, 73, 53, 0.78) 0%,
+      rgba(91, 51, 39, 0.46) 25%,
+      rgba(52, 32, 27, 0.18) 50%,
+      transparent 67%
     ),
 
     linear-gradient(
@@ -486,11 +477,16 @@ body {
 
 
 .cutout-paciente {
-  left: 3%;
+  /*
+    aproxima mais,
+    praticamente rosto/ombros
+  */
 
-  bottom: -2%;
+  left: 8%;
 
-  height: 118%;
+  bottom: -40%;
+
+  height: 178%;
 }
 
 
@@ -499,10 +495,6 @@ body {
 ===================================================== */
 
 .card-tratamentos .card-photo {
-  /*
-    ligeiramente mais baixo
-  */
-
   object-position:
     54% 60%;
 }
@@ -513,12 +505,17 @@ body {
 ===================================================== */
 
 .card-vip .vip-photo {
-  width: 108%;
+  /*
+    diminui o zoom e sobe
+    para mostrar o olho azul
+  */
 
-  left: -8%;
+  width: 100%;
+
+  left: 0;
 
   object-position:
-    18% 50%;
+    16% 29%;
 }
 
 
@@ -529,11 +526,11 @@ body {
 .card-instituto {
   background:
     radial-gradient(
-      circle at 76% 42%,
-      rgba(130, 81, 62, 0.72) 0%,
-      rgba(85, 54, 45, 0.42) 30%,
-      rgba(52, 35, 29, 0.20) 52%,
-      transparent 68%
+      circle at 76% 46%,
+      rgba(130, 81, 62, 0.76) 0%,
+      rgba(85, 54, 45, 0.44) 30%,
+      rgba(52, 35, 29, 0.18) 53%,
+      transparent 69%
     ),
 
     linear-gradient(
@@ -547,11 +544,16 @@ body {
 
 
 .cutout-larissa {
-  right: 5%;
+  /*
+    aproxima bastante,
+    deixando rosto/cabelo em destaque
+  */
 
-  bottom: -12%;
+  right: 7%;
 
-  height: 132%;
+  bottom: -48%;
+
+  height: 184%;
 }
 
 
@@ -715,34 +717,30 @@ footer {
 @media (max-width: 700px) {
 
   .hero {
-    height: 590px;
+    height: 565px;
 
-    min-height: 590px;
+    min-height: 565px;
 
     align-items: flex-start;
   }
 
 
   .hero-content {
-    padding-top: 38px;
+    padding-top: 34px;
   }
 
 
   .hero-symbol {
     width:
       min(
-        225px,
-        58vw
+        218px,
+        56vw
       );
   }
 
 
   .hero-brand {
-    /*
-      desce ainda mais no mobile
-    */
-
-    margin-top: 4px;
+    margin-top: 12px;
   }
 
 
@@ -766,14 +764,14 @@ footer {
 
 
   .hero-phrase {
-    margin-top: 20px;
+    margin-top: 18px;
 
     font-size: 11px;
   }
 
 
   .links-label {
-    margin-top: 20px;
+    margin-top: 18px;
 
     width:
       calc(
@@ -799,10 +797,6 @@ footer {
 
   .links-section {
     min-height: auto;
-
-    /*
-      sobe os cards
-    */
 
     padding:
       0
@@ -879,11 +873,11 @@ footer {
   /* CARD 02 */
 
   .cutout-paciente {
-    left: -2%;
+    left: 5%;
 
-    bottom: -5%;
+    bottom: -38%;
 
-    height: 122%;
+    height: 174%;
   }
 
 
@@ -898,23 +892,23 @@ footer {
   /* CARD 04 */
 
   .card-vip .vip-photo {
-    width: 111%;
+    width: 100%;
 
-    left: -10%;
+    left: 0;
 
     object-position:
-      18% 50%;
+      13% 25%;
   }
 
 
   /* CARD 05 */
 
   .cutout-larissa {
-    right: 1%;
+    right: 4%;
 
-    bottom: -14%;
+    bottom: -45%;
 
-    height: 136%;
+    height: 179%;
   }
 
 
@@ -934,24 +928,24 @@ footer {
 @media (max-width: 390px) {
 
   .hero {
-    height: 560px;
+    height: 545px;
 
-    min-height: 560px;
+    min-height: 545px;
   }
 
 
   .hero-content {
-    padding-top: 30px;
+    padding-top: 28px;
   }
 
 
   .hero-symbol {
-    width: 58vw;
+    width: 56vw;
   }
 
 
   .hero-brand {
-    margin-top: 5px;
+    margin-top: 11px;
   }
 
 
@@ -961,14 +955,14 @@ footer {
 
 
   .hero-phrase {
-    margin-top: 18px;
+    margin-top: 17px;
 
     font-size: 10px;
   }
 
 
   .links-label {
-    margin-top: 18px;
+    margin-top: 17px;
   }
 
 
@@ -993,16 +987,16 @@ footer {
 
 
   .cutout-paciente {
-    left: -5%;
+    left: 3%;
 
-    height: 120%;
+    height: 170%;
   }
 
 
   .cutout-larissa {
-    right: -2%;
+    right: 2%;
 
-    height: 133%;
+    height: 175%;
   }
 
 }
