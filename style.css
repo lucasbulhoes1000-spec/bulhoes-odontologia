@@ -423,29 +423,37 @@ body {
 
 /* =====================================================
    CARD 02
-   NOVA FOTO
+   NOVA FOTO — SOMENTE ESTE CARD FOI ALTERADO
 ===================================================== */
 
 .card-paciente {
   background:
+    radial-gradient(
+      circle at 29% 47%,
+      rgba(132, 75, 54, 0.80) 0%,
+      rgba(93, 52, 39, 0.50) 25%,
+      rgba(54, 33, 27, 0.21) 50%,
+      transparent 68%
+    ),
+
     linear-gradient(
       90deg,
-      #57372C 0%,
-      #3A251F 39%,
+      #422A21 0%,
+      #34221C 38%,
       #221714 68%,
       #120E0C 100%
     );
 }
 
 
-/* esconde a imagem antiga sem precisar alterar o index */
+/* esconde somente a imagem antiga do card 2 */
 
 .cutout-paciente {
   display: none;
 }
 
 
-/* nova foto paciente-card2.jpg */
+/* nova paciente */
 
 .card-paciente::before {
   content: "";
@@ -454,15 +462,10 @@ body {
 
   z-index: 1;
 
-  /*
-    Deixamos uma área grande para a foto,
-    mas ela continua concentrada no lado esquerdo.
-  */
+  width: 400px;
+  height: 400px;
 
-  width: 390px;
-  height: 390px;
-
-  left: -68px;
+  left: -72px;
   top: 50%;
 
   background-image:
@@ -476,46 +479,15 @@ body {
     50% 50%;
 
   /*
-    A foto original veio de lado.
-    Aqui giramos para o rosto acompanhar
-    a lateral esquerda do card.
+    CORREÇÃO:
+    -90deg deixa o rosto na orientação correta
   */
 
   transform:
     translateY(-50%)
-    rotate(90deg);
+    rotate(-90deg);
 
   transform-origin: center;
-}
-
-
-/*
-  Gradiente de integração entre
-  a foto e o fundo do card.
-*/
-
-.card-paciente::after {
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  z-index: 2;
-
-  pointer-events: none;
-
-  background:
-    linear-gradient(
-      90deg,
-      transparent 0%,
-      transparent 28%,
-      rgba(23, 15, 12, 0.08) 38%,
-      rgba(25, 16, 13, 0.34) 48%,
-      rgba(20, 14, 11, 0.72) 62%,
-      #120E0C 79%,
-      #120E0C 100%
-    );
 }
 
 
@@ -531,7 +503,7 @@ body {
 
 /* =====================================================
    CARD 04
-   MENOS QUEIXO / MAIS PARTE DE CIMA
+   MANTIDO EXATAMENTE COMO ESTAVA
 ===================================================== */
 
 .card-vip {
@@ -591,7 +563,7 @@ body {
 
 /* =====================================================
    CARD 05
-   NÃO MEXER
+   NÃO MEXER — RESTAURADO EXATAMENTE
 ===================================================== */
 
 .card-instituto {
@@ -662,28 +634,6 @@ body {
       #120E0C 100%
     );
 }
-
-
-/*
-  No card 2, suavizamos o overlay original
-  para não esconder o rosto.
-*/
-
-.card-paciente .overlay-right {
-  z-index: 3;
-
-  background:
-    linear-gradient(
-      90deg,
-      transparent 0%,
-      transparent 33%,
-      rgba(18, 12, 10, 0.10) 45%,
-      rgba(18, 12, 10, 0.48) 61%,
-      rgba(18, 12, 10, 0.88) 79%,
-      #120E0C 100%
-    );
-}
-
 
 .card-vip .overlay-right {
   background:
@@ -948,21 +898,18 @@ footer {
   /* 02 - NOVA FOTO */
 
   .card-paciente::before {
-    width: 255px;
-    height: 255px;
+    width: 265px;
+    height: 265px;
 
-    left: -52px;
-
+    left: -54px;
     top: 50%;
-
-    background-size: cover;
 
     background-position:
       50% 50%;
 
     transform:
       translateY(-50%)
-      rotate(90deg);
+      rotate(-90deg);
   }
 
 
@@ -974,7 +921,7 @@ footer {
   }
 
 
-  /* 04 */
+  /* 04 - NÃO MEXER */
 
   .card-vip .vip-photo {
     width: 60%;
@@ -1072,11 +1019,10 @@ footer {
   /* 02 - NOVA FOTO */
 
   .card-paciente::before {
-    width: 235px;
-    height: 235px;
+    width: 245px;
+    height: 245px;
 
     left: -50px;
-
     top: 50%;
 
     background-position:
@@ -1084,11 +1030,11 @@ footer {
 
     transform:
       translateY(-50%)
-      rotate(90deg);
+      rotate(-90deg);
   }
 
 
-  /* 04 */
+  /* 04 - NÃO MEXER */
 
   .card-vip .vip-photo {
     width: 62%;
