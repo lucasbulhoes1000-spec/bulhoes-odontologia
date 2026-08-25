@@ -28,8 +28,6 @@
   >
 
 
-  <!-- FONTES -->
-
   <link
     rel="preconnect"
     href="https://fonts.googleapis.com"
@@ -46,8 +44,6 @@
     rel="stylesheet"
   >
 
-
-  <!-- PRIMEIRA DOBRA -->
 
   <link
     rel="preload"
@@ -75,17 +71,16 @@
   <div class="page-background"></div>
 
 
-  <!-- ==================================================
-       HERO
-  =================================================== -->
+  <!-- HERO -->
 
   <header class="hero">
 
     <div class="hero-light"></div>
 
+
     <div class="hero-content">
 
-      <div class="logo-area">
+      <div class="hero-logo-wrap">
 
         <img
           src="logo-bulhoes.png"
@@ -96,6 +91,7 @@
         >
 
       </div>
+
 
       <p class="hero-phrase">
         Naturalidade é o nosso maior luxo.
@@ -124,9 +120,7 @@
 
 
 
-  <!-- ==================================================
-       LINKS
-  =================================================== -->
+  <!-- LINKS -->
 
   <main
     class="links-section"
@@ -136,9 +130,7 @@
     <div class="links-wrapper">
 
 
-      <!-- ==================================================
-           01
-      =================================================== -->
+      <!-- 01 -->
 
       <a
         class="visual-card card-avaliacao"
@@ -182,9 +174,7 @@
 
 
 
-      <!-- ==================================================
-           02
-      =================================================== -->
+      <!-- 02 -->
 
       <a
         class="visual-card card-paciente"
@@ -194,12 +184,12 @@
         rel="noopener noreferrer"
       >
 
-        <div class="portrait-area paciente-area">
+        <div class="image-zone image-zone-left">
 
           <img
             src="jasoupaciente.JPG"
             alt="Paciente Bulhões"
-            class="portrait-photo paciente-photo"
+            class="zone-photo paciente-photo"
             loading="lazy"
             decoding="async"
           >
@@ -233,9 +223,7 @@
 
 
 
-      <!-- ==================================================
-           03
-      =================================================== -->
+      <!-- 03 -->
 
       <a
         class="visual-card card-tratamentos"
@@ -279,9 +267,7 @@
 
 
 
-      <!-- ==================================================
-           04
-      =================================================== -->
+      <!-- 04 -->
 
       <a
         class="visual-card card-vip"
@@ -325,9 +311,7 @@
 
 
 
-      <!-- ==================================================
-           05
-      =================================================== -->
+      <!-- 05 -->
 
       <a
         class="visual-card card-instituto"
@@ -337,12 +321,12 @@
         rel="noopener noreferrer"
       >
 
-        <div class="portrait-area larissa-area">
+        <div class="image-zone image-zone-right">
 
           <img
             src="larissa.JPG"
             alt="Dra. Larissa Bulhões"
-            class="portrait-photo larissa-photo"
+            class="zone-photo larissa-photo"
             loading="lazy"
             decoding="async"
           >
@@ -374,7 +358,6 @@
 
       </a>
 
-
     </div>
 
 
@@ -384,9 +367,6 @@
 
   </main>
 
-
-
-  <!-- SOMENTE O BOTÃO PODE FAZER SCROLL -->
 
   <script>
 
@@ -409,6 +389,7 @@
         function(event) {
 
           event.preventDefault();
+
 
           const links =
             document.getElementById("links");
