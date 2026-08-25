@@ -38,9 +38,7 @@ body {
 .page-background {
   position: fixed;
   inset: 0;
-
   z-index: -20;
-
   pointer-events: none;
 
   background:
@@ -71,7 +69,6 @@ body {
   height: 760px;
 
   display: flex;
-
   align-items: flex-start;
   justify-content: center;
 
@@ -91,7 +88,6 @@ body {
 
 .hero-light {
   position: absolute;
-
   top: -80px;
 
   width: 850px;
@@ -117,7 +113,6 @@ body {
   inset: 0;
 
   z-index: 1;
-
   pointer-events: none;
 
   background:
@@ -133,16 +128,13 @@ body {
 
 .hero-content {
   position: relative;
-
   z-index: 3;
 
   width: 100%;
-
   padding-top: 78px;
 
   display: flex;
   flex-direction: column;
-
   align-items: center;
 
   text-align: center;
@@ -154,16 +146,10 @@ body {
 ===================================================== */
 
 .hero-symbol {
-  width:
-    min(
-      310px,
-      44vw
-    );
-
+  width: min(310px, 44vw);
   height: auto;
 
   object-fit: contain;
-
   opacity: 0.72;
 
   filter:
@@ -184,9 +170,7 @@ body {
 
 .hero-brand {
   position: relative;
-
   z-index: 4;
-
   margin-top: 14px;
 }
 
@@ -196,17 +180,10 @@ body {
     "Times New Roman",
     serif;
 
-  font-size:
-    clamp(
-      48px,
-      5vw,
-      76px
-    );
-
+  font-size: clamp(48px, 5vw, 76px);
   line-height: 0.95;
 
   font-weight: 400;
-
   letter-spacing: -2px;
 
   color: #C6A071;
@@ -216,9 +193,7 @@ body {
   margin-top: 10px;
 
   font-size: 9px;
-
   font-weight: 600;
-
   letter-spacing: 4px;
 
   color: #C6A071;
@@ -227,15 +202,8 @@ body {
 .hero-phrase {
   margin-top: 27px;
 
-  font-size:
-    clamp(
-      16px,
-      1.5vw,
-      20px
-    );
-
+  font-size: clamp(16px, 1.5vw, 20px);
   font-weight: 400;
-
   letter-spacing: 0.7px;
 
   color: #D4AC7C;
@@ -250,51 +218,34 @@ body {
   margin-top: 25px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
   gap: 24px;
 
-  width:
-    min(
-      440px,
-      calc(100% - 40px)
-    );
+  width: min(440px, calc(100% - 40px));
 
-  padding:
-    17px
-    25px;
+  padding: 17px 25px;
 
-  border:
-    1px solid
-    rgba(197, 154, 101, 0.72);
-
+  border: 1px solid rgba(197, 154, 101, 0.72);
   border-radius: 999px;
 
-  background:
-    rgba(15, 10, 8, 0.39);
+  background: rgba(15, 10, 8, 0.39);
 
-  backdrop-filter:
-    blur(12px);
-
-  -webkit-backdrop-filter:
-    blur(12px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 
   text-decoration: none;
 
   color: white;
 
   font-size: 11px;
-
   font-weight: 600;
-
   letter-spacing: 1.5px;
 }
 
 .links-label span {
   color: var(--dourado);
-
   font-size: 18px;
 }
 
@@ -309,10 +260,7 @@ body {
   width: 100%;
   min-height: 100vh;
 
-  padding:
-    0
-    20px
-    46px;
+  padding: 0 20px 46px;
 
   background:
     linear-gradient(
@@ -347,17 +295,10 @@ body {
 
 .links-wrapper {
   position: relative;
-
   z-index: 2;
 
-  width:
-    min(
-      850px,
-      100%
-    );
-
-  margin:
-    0 auto;
+  width: min(850px, 100%);
+  margin: 0 auto;
 }
 
 
@@ -379,15 +320,11 @@ body {
 
   border-radius: 30px;
 
-  border:
-    1px solid
-    rgba(204, 188, 166, 0.21);
+  border: 1px solid rgba(204, 188, 166, 0.21);
 
-  background:
-    #17100D;
+  background: #17100D;
 
   color: white;
-
   text-decoration: none;
 
   box-shadow:
@@ -399,7 +336,6 @@ body {
 
 .card-photo {
   position: absolute;
-
   inset: 0;
 
   z-index: 0;
@@ -416,14 +352,14 @@ body {
 ===================================================== */
 
 .card-avaliacao .card-photo {
-  object-position:
-    79% 50%;
+  object-position: 79% 50%;
 }
 
 
 /* =====================================================
    CARD 02
-   FOTO MAIS ABERTA + COLADA NA BORDA ESQUERDA
+   ÚNICO CARD ALTERADO
+   MAIS OLHO + MAIS CABELO + ROSTO MAIS ABERTO
 ===================================================== */
 
 .card-paciente {
@@ -435,7 +371,6 @@ body {
       rgba(50, 31, 26, 0.25) 51%,
       transparent 68%
     ),
-
     linear-gradient(
       90deg,
       #4C3027 0%,
@@ -445,24 +380,9 @@ body {
     );
 }
 
-
-/* some a imagem antiga */
-
 .cutout-paciente {
   display: none;
 }
-
-
-/*
-  FOTO NOVA
-
-  Está maior que o card de propósito,
-  mas com SCALE MENOR para mostrar mais:
-  cabelo + olho + sorriso.
-
-  LEFT negativo remove totalmente
-  o espaço da borda esquerda.
-*/
 
 .card-paciente::before {
   content: "";
@@ -471,44 +391,29 @@ body {
 
   z-index: 1;
 
-  width: 390px;
-  height: 390px;
+  width: 500px;
+  height: 500px;
 
-  left: -105px;
+  left: -120px;
   top: 50%;
 
-  background-image:
-    url("paciente-card2.jpg");
-
+  background-image: url("paciente-card2.jpg");
   background-repeat: no-repeat;
-
   background-size: contain;
-
-  background-position:
-    center center;
+  background-position: center center;
 
   transform:
     translateY(-50%)
     rotate(-90deg)
-    scale(0.88);
+    scale(0.66);
 
-  transform-origin:
-    center center;
+  transform-origin: center center;
 }
-
-
-/*
-  DEGRADÊ DA FOTO PARA O CARD
-
-  Começa transparente para preservar o rosto
-  e vai entrando gradualmente no marrom/preto.
-*/
 
 .card-paciente::after {
   content: "";
 
   position: absolute;
-
   inset: 0;
 
   z-index: 2;
@@ -519,14 +424,14 @@ body {
     linear-gradient(
       90deg,
       transparent 0%,
-      transparent 29%,
-      rgba(47, 29, 24, 0.02) 34%,
-      rgba(45, 28, 23, 0.10) 40%,
-      rgba(39, 24, 20, 0.26) 47%,
-      rgba(31, 20, 16, 0.49) 55%,
-      rgba(24, 16, 13, 0.72) 63%,
-      rgba(18, 13, 11, 0.91) 74%,
-      #120E0C 88%,
+      transparent 31%,
+      rgba(47, 29, 24, 0.03) 37%,
+      rgba(45, 28, 23, 0.12) 43%,
+      rgba(39, 24, 20, 0.30) 50%,
+      rgba(31, 20, 16, 0.54) 58%,
+      rgba(24, 16, 13, 0.76) 66%,
+      rgba(18, 13, 11, 0.93) 77%,
+      #120E0C 90%,
       #120E0C 100%
     );
 }
@@ -537,14 +442,13 @@ body {
 ===================================================== */
 
 .card-tratamentos .card-photo {
-  object-position:
-    54% 60%;
+  object-position: 54% 60%;
 }
 
 
 /* =====================================================
    CARD 04
-   MANTIDO
+   MANTIDO EXATAMENTE
 ===================================================== */
 
 .card-vip {
@@ -570,9 +474,7 @@ body {
   height: 100%;
 
   object-fit: cover;
-
-  object-position:
-    22% 43%;
+  object-position: 22% 43%;
 }
 
 .card-vip::before {
@@ -604,7 +506,7 @@ body {
 
 /* =====================================================
    CARD 05
-   MANTIDO
+   MANTIDO EXATAMENTE
 ===================================================== */
 
 .card-instituto {
@@ -616,7 +518,6 @@ body {
       rgba(53, 35, 29, 0.20) 53%,
       transparent 70%
     ),
-
     linear-gradient(
       90deg,
       #231714 0%,
@@ -640,7 +541,6 @@ body {
   bottom: -85%;
 
   display: block;
-
   max-width: none;
 }
 
@@ -651,7 +551,6 @@ body {
 
 .card-overlay {
   position: absolute;
-
   inset: 0;
 
   z-index: 2;
@@ -687,7 +586,9 @@ body {
 }
 
 
-/* overlay exclusivo do card 2 */
+/* =====================================================
+   OVERLAY CARD 02
+===================================================== */
 
 .card-paciente .overlay-right {
   z-index: 3;
@@ -696,16 +597,15 @@ body {
     linear-gradient(
       90deg,
       transparent 0%,
-      transparent 36%,
-      rgba(18, 12, 10, 0.03) 43%,
-      rgba(18, 12, 10, 0.16) 51%,
-      rgba(18, 12, 10, 0.42) 60%,
-      rgba(18, 12, 10, 0.73) 70%,
-      rgba(18, 12, 10, 0.93) 84%,
+      transparent 38%,
+      rgba(18, 12, 10, 0.03) 45%,
+      rgba(18, 12, 10, 0.16) 52%,
+      rgba(18, 12, 10, 0.42) 61%,
+      rgba(18, 12, 10, 0.73) 71%,
+      rgba(18, 12, 10, 0.93) 85%,
       #120E0C 100%
     );
 }
-
 
 .card-vip .overlay-right {
   background:
@@ -732,8 +632,7 @@ body {
 
   top: 50%;
 
-  transform:
-    translateY(-50%);
+  transform: translateY(-50%);
 
   width: 45%;
 }
@@ -754,24 +653,16 @@ body {
   color: #D1AB7A;
 
   font-size: 8px;
-
   font-weight: 600;
-
   letter-spacing: 2px;
 }
 
 .card-content h2 {
-  font-size:
-    clamp(
-      24px,
-      2.4vw,
-      30px
-    );
+  font-size: clamp(24px, 2.4vw, 30px);
 
   line-height: 1.02;
 
   font-weight: 600;
-
   letter-spacing: -0.8px;
 }
 
@@ -779,27 +670,18 @@ body {
   margin-top: 10px;
 
   font-size: 10px;
-
   font-weight: 500;
 
-  color:
-    rgba(
-      255,
-      255,
-      255,
-      0.72
-    );
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .card-line {
   width: 30px;
-
   height: 1px;
 
   margin-top: 14px;
 
-  background:
-    #D1AB7A;
+  background: #D1AB7A;
 }
 
 
@@ -819,7 +701,6 @@ footer {
   color: #B58A5C;
 
   font-size: 8px;
-
   letter-spacing: 1.8px;
 }
 
@@ -832,7 +713,6 @@ footer {
 
   .hero {
     height: 565px;
-
     min-height: 565px;
 
     align-items: flex-start;
@@ -843,11 +723,7 @@ footer {
   }
 
   .hero-symbol {
-    width:
-      min(
-        218px,
-        56vw
-      );
+    width: min(218px, 56vw);
   }
 
   .hero-brand {
@@ -855,41 +731,28 @@ footer {
   }
 
   .hero-brand h1 {
-    font-size:
-      clamp(
-        40px,
-        11vw,
-        52px
-      );
+    font-size: clamp(40px, 11vw, 52px);
   }
 
   .hero-brand-subtitle {
     margin-top: 6px;
 
     font-size: 6px;
-
     letter-spacing: 2.8px;
   }
 
   .hero-phrase {
     margin-top: 18px;
-
     font-size: 11px;
   }
 
   .links-label {
     margin-top: 18px;
 
-    width:
-      calc(
-        100% - 44px
-      );
-
+    width: calc(100% - 44px);
     max-width: 340px;
 
-    padding:
-      13px
-      16px;
+    padding: 13px 16px;
 
     gap: 15px;
 
@@ -903,10 +766,7 @@ footer {
   .links-section {
     min-height: auto;
 
-    padding:
-      0
-      12px
-      34px;
+    padding: 0 12px 34px;
   }
 
   .visual-card {
@@ -933,74 +793,63 @@ footer {
     margin-bottom: 6px;
 
     font-size: 5.8px;
-
     letter-spacing: 1.2px;
   }
 
   .card-content h2 {
-    font-size:
-      clamp(
-        16px,
-        4.8vw,
-        20px
-      );
+    font-size: clamp(16px, 4.8vw, 20px);
   }
 
   .card-content p {
     margin-top: 6px;
-
     font-size: 7px;
   }
 
   .card-line {
     width: 20px;
-
     margin-top: 9px;
   }
 
 
-  /* 01 */
+  /* CARD 01 */
 
   .card-avaliacao .card-photo {
-    object-position:
-      81% 50%;
+    object-position: 81% 50%;
   }
 
 
   /* =====================================================
      CARD 02 MOBILE
-     MAIS ABERTO E SEM ESPAÇO NA ESQUERDA
+     MAIS ABERTO
   ===================================================== */
 
   .card-paciente::before {
-    width: 265px;
-    height: 265px;
+    width: 350px;
+    height: 350px;
 
-    left: -78px;
+    left: -90px;
     top: 50%;
 
-    background-size:
-      contain;
-
-    background-position:
-      center center;
+    background-size: contain;
+    background-position: center center;
 
     transform:
       translateY(-50%)
       rotate(-90deg)
-      scale(0.88);
+      scale(0.66);
+
+    transform-origin: center center;
   }
 
 
-  /* 03 */
+  /* CARD 03 */
 
   .card-tratamentos .card-photo {
-    object-position:
-      54% 58%;
+    object-position: 54% 58%;
   }
 
 
-  /* 04 */
+  /* CARD 04 */
 
   .card-vip .vip-photo {
     width: 60%;
@@ -1010,9 +859,7 @@ footer {
     top: 0;
 
     object-fit: cover;
-
-    object-position:
-      22% 43%;
+    object-position: 22% 43%;
   }
 
   .card-vip::before {
@@ -1020,7 +867,7 @@ footer {
   }
 
 
-  /* 05 */
+  /* CARD 05 */
 
   .cutout-larissa {
     position: absolute;
@@ -1042,7 +889,6 @@ footer {
 
     font-size: 6.5px;
   }
-
 }
 
 
@@ -1054,7 +900,6 @@ footer {
 
   .hero {
     height: 545px;
-
     min-height: 545px;
   }
 
@@ -1076,7 +921,6 @@ footer {
 
   .hero-phrase {
     margin-top: 17px;
-
     font-size: 10px;
   }
 
@@ -1106,26 +950,25 @@ footer {
   ===================================================== */
 
   .card-paciente::before {
-    width: 245px;
-    height: 245px;
+    width: 325px;
+    height: 325px;
 
-    left: -73px;
+    left: -84px;
     top: 50%;
 
-    background-size:
-      contain;
-
-    background-position:
-      center center;
+    background-size: contain;
+    background-position: center center;
 
     transform:
       translateY(-50%)
       rotate(-90deg)
-      scale(0.86);
+      scale(0.64);
+
+    transform-origin: center center;
   }
 
 
-  /* 04 */
+  /* CARD 04 */
 
   .card-vip .vip-photo {
     width: 62%;
@@ -1135,13 +978,11 @@ footer {
     top: 0;
 
     object-fit: cover;
-
-    object-position:
-      22% 43%;
+    object-position: 22% 43%;
   }
 
 
-  /* 05 */
+  /* CARD 05 */
 
   .cutout-larissa {
     position: absolute;
@@ -1156,5 +997,4 @@ footer {
 
     display: block;
   }
-
 }
