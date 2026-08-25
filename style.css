@@ -472,18 +472,12 @@ body {
 }
 
 
-/*
-  CARD 2:
-  MAIS ZOOM que a última versão boa.
-  Mantém cabeça/rosto no centro da área esquerda.
-*/
-
 .cutout-paciente {
-  height: 285%;
+  height: 270%;
 
-  left: 9%;
+  left: 10%;
 
-  bottom: -122%;
+  bottom: -112%;
 }
 
 
@@ -499,51 +493,35 @@ body {
 
 /* =====================================================
    CARD 04
-   MUITO MENOS ZOOM
+   MENOS ZOOM, MAIS ROSTO
 ===================================================== */
 
 .card-vip {
   background:
     linear-gradient(
       90deg,
-      #6B483C 0%,
-      #4B3028 33%,
-      #2B1D18 64%,
+      #5B3A2F 0%,
+      #422B24 35%,
+      #2A1C17 65%,
       #120E0C 100%
     );
 }
 
-
-/*
-  IMPORTANTE:
-
-  Em vez de obrigar a foto a preencher
-  um retângulo horizontal com COVER,
-  agora usamos a ALTURA como referência.
-
-  Isso reduz MUITO o zoom.
-
-  Resultado:
-  aparece muito mais do rosto original.
-*/
 
 .card-vip .vip-photo {
   position: absolute;
 
   z-index: 0;
 
-  top: 50%;
-  left: 2%;
+  top: 0;
+  left: 0;
 
-  width: auto;
-  height: 105%;
+  width: 52%;
+  height: 100%;
 
-  max-width: none;
+  object-fit: cover;
 
-  object-fit: contain;
-
-  transform:
-    translateY(-50%);
+  object-position: 18% 48%;
 }
 
 
@@ -558,7 +536,7 @@ body {
   bottom: 0;
   left: 0;
 
-  width: 66%;
+  width: 60%;
 
   pointer-events: none;
 
@@ -566,9 +544,9 @@ body {
     linear-gradient(
       90deg,
       rgba(18, 12, 10, 0.01) 0%,
-      rgba(18, 12, 10, 0.01) 44%,
+      rgba(18, 12, 10, 0.01) 45%,
       rgba(22, 14, 12, 0.08) 58%,
-      rgba(21, 14, 11, 0.38) 76%,
+      rgba(21, 14, 11, 0.35) 77%,
       rgba(18, 14, 12, 0.92) 100%
     );
 }
@@ -576,7 +554,7 @@ body {
 
 /* =====================================================
    CARD 05
-   CONGELADO — NÃO MEXER
+   NÃO MEXER
 ===================================================== */
 
 .card-instituto {
@@ -652,20 +630,14 @@ body {
 }
 
 
-/*
-  Overlay específico do VIP.
-  Mantém o rosto limpo e escurece
-  somente na direção do texto.
-*/
-
 .card-vip .overlay-right {
   background:
     linear-gradient(
       90deg,
       transparent 0%,
-      transparent 39%,
-      rgba(18, 12, 10, 0.06) 52%,
-      rgba(18, 12, 10, 0.34) 67%,
+      transparent 35%,
+      rgba(18, 12, 10, 0.06) 50%,
+      rgba(18, 12, 10, 0.34) 66%,
       rgba(18, 12, 10, 0.80) 83%,
       #120E0C 100%
     );
@@ -933,7 +905,7 @@ footer {
   }
 
 
-  /* CARD 01 */
+  /* 01 */
 
   .card-avaliacao .card-photo {
     object-position:
@@ -941,18 +913,18 @@ footer {
   }
 
 
-  /* CARD 02 — MAIS ZOOM */
+  /* 02 - MAIS ZOOM */
 
   .cutout-paciente {
-    height: 275%;
+    height: 260%;
 
     left: 7%;
 
-    bottom: -117%;
+    bottom: -107%;
   }
 
 
-  /* CARD 03 */
+  /* 03 */
 
   .card-tratamentos .card-photo {
     object-position:
@@ -960,26 +932,26 @@ footer {
   }
 
 
-  /* CARD 04 — MENOS ZOOM */
+  /* 04 - MENOS ZOOM */
 
   .card-vip .vip-photo {
-    top: 50%;
-    left: 1%;
+    width: 54%;
+    height: 100%;
 
-    width: auto;
-    height: 103%;
+    left: 0;
+    top: 0;
 
-    transform:
-      translateY(-50%);
+    object-position:
+      18% 47%;
   }
 
 
   .card-vip::before {
-    width: 68%;
+    width: 62%;
   }
 
 
-  /* CARD 05 — NÃO MEXER */
+  /* 05 - NÃO MEXER */
 
   .cutout-larissa {
     height: 215%;
@@ -1064,32 +1036,28 @@ footer {
   }
 
 
-  /* CARD 02 */
+  /* 02 */
 
   .cutout-paciente {
-    height: 270%;
+    height: 255%;
 
     left: 5%;
 
-    bottom: -114%;
+    bottom: -104%;
   }
 
 
-  /* CARD 04 — AINDA MAIS ABERTO */
+  /* 04 */
 
   .card-vip .vip-photo {
-    top: 50%;
-    left: 1%;
+    width: 56%;
 
-    width: auto;
-    height: 100%;
-
-    transform:
-      translateY(-50%);
+    object-position:
+      18% 47%;
   }
 
 
-  /* CARD 05 — NÃO MEXER */
+  /* 05 - NÃO MEXER */
 
   .cutout-larissa {
     height: 210%;
