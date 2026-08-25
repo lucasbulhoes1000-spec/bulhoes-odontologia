@@ -30,15 +30,24 @@
   ></script>
 
   <script>
-    window.dataLayer = window.dataLayer || [];
+
+    window.dataLayer =
+      window.dataLayer || [];
 
     function gtag() {
       dataLayer.push(arguments);
     }
 
-    gtag('js', new Date());
+    gtag(
+      'js',
+      new Date()
+    );
 
-    gtag('config', 'G-L507RBK5JD');
+    gtag(
+      'config',
+      'G-L507RBK5JD'
+    );
+
   </script>
 
 
@@ -171,6 +180,7 @@
         class="visual-card card-avaliacao"
         data-ga-event="click_avaliacao"
         data-ga-destination="whatsapp_avaliacao"
+        data-sheet-destination="whatsapp_avaliacao"
       >
 
 
@@ -220,6 +230,7 @@
         class="visual-card card-paciente"
         data-ga-event="click_paciente"
         data-ga-destination="whatsapp_paciente"
+        data-sheet-destination="whatsapp_paciente"
       >
 
 
@@ -268,6 +279,7 @@
         class="visual-card card-tratamentos"
         data-ga-event="click_site"
         data-ga-destination="site_bulhoes"
+        data-sheet-destination="site_bulhoes"
       >
 
 
@@ -317,6 +329,7 @@
         class="visual-card card-vip"
         data-ga-event="click_grupo_vip"
         data-ga-destination="whatsapp_grupo_vip"
+        data-sheet-destination="whatsapp_grupo_vip"
       >
 
 
@@ -366,6 +379,7 @@
         class="visual-card card-instituto"
         data-ga-event="click_instituto"
         data-ga-destination="whatsapp_instituto"
+        data-sheet-destination="whatsapp_instituto"
       >
 
 
@@ -408,7 +422,9 @@
       ================================================== -->
 
       <footer>
+
         © 2026 BULHÕES ODONTOLOGIA
+
       </footer>
 
 
@@ -419,19 +435,314 @@
 
 
   <!-- =====================================================
-       RASTREAMENTO DOS CLIQUES
-       GOOGLE ANALYTICS
+       RASTREAMENTO
+       GA4 + GOOGLE SHEETS
   ====================================================== -->
 
   <script>
 
+    /* =====================================================
+       CONFIGURAÇÃO
+    ====================================================== */
+
+    const SHEETS_ENDPOINT =
+      "https://script.google.com/macros/s/AKfycbx-2IhvdBZH2JfLGU-mSVIyub2KHbOrGukal-diPqxm0wa7YF2Uljk4HytL4wDNISf-/exec";
+
+
+    /* =====================================================
+       PARÂMETROS DA URL
+    ====================================================== */
+
+    const currentUrl =
+      new URL(
+        window.location.href
+      );
+
+
+    const params =
+      currentUrl.searchParams;
+
+
+    /* =====================================================
+       LANDING PAGE ORIGINAL
+    ====================================================== */
+
+    if (
+      !sessionStorage.getItem(
+        "bulhoes_landing_page"
+      )
+    ) {
+
+      sessionStorage.setItem(
+        "bulhoes_landing_page",
+        window.location.href
+      );
+
+    }
+
+
+    /* =====================================================
+       PRIMEIRO REFERRER
+    ====================================================== */
+
+    if (
+      !sessionStorage.getItem(
+        "bulhoes_first_referrer"
+      )
+    ) {
+
+      sessionStorage.setItem(
+        "bulhoes_first_referrer",
+        document.referrer || "direct"
+      );
+
+    }
+
+
+    /* =====================================================
+       SALVAR UTMs DA PRIMEIRA ENTRADA
+
+       Isso mantém a origem mesmo que a pessoa
+       navegue ou clique depois.
+    ====================================================== */
+
+    const trackingKeys = [
+
+      "utm_source",
+      "utm_medium",
+      "utm_campaign",
+      "utm_content",
+      "utm_term",
+      "fbclid",
+      "gclid"
+
+    ];
+
+
+    trackingKeys.forEach(
+      function (key) {
+
+        const value =
+          params.get(key);
+
+
+        if (value) {
+
+          sessionStorage.setItem(
+            "bulhoes_" + key,
+            value
+          );
+
+        }
+
+      }
+    );
+
+
+    /* =====================================================
+       LER VALOR DE RASTREAMENTO
+    ====================================================== */
+
+    function getTrackingValue(key) {
+
+      return (
+        sessionStorage.getItem(
+          "bulhoes_" + key
+        ) ||
+        params.get(key) ||
+        "none"
+      );
+
+    }
+
+
+    /* =====================================================
+       GERAR CLICK ID
+    ====================================================== */
+
+    function generateClickId() {
+
+      const time =
+        Date.now()
+          .toString(36)
+          .toUpperCase();
+
+
+      const random =
+        Math
+          .random()
+          .toString(36)
+          .substring(2, 7)
+          .toUpperCase();
+
+
+      return (
+        "BULHOES-" +
+        time +
+        random
+      );
+
+    }
+
+
+    /* =====================================================
+       ENVIAR PARA GOOGLE SHEETS
+    ====================================================== */
+
+    function sendToSheets(destination) {
+
+      const payload = {
+
+        click_id:
+          generateClickId(),
+
+        data_hora:
+          new Date().toISOString(),
+
+        destino:
+          destination,
+
+        origem_link:
+          document.referrer || "direct",
+
+        utm_source:
+          getTrackingValue(
+            "utm_source"
+          ),
+
+        utm_medium:
+          getTrackingValue(
+            "utm_medium"
+          ),
+
+        utm_campaign:
+          getTrackingValue(
+            "utm_campaign"
+          ),
+
+        utm_content:
+          getTrackingValue(
+            "utm_content"
+          ),
+
+        utm_term:
+          getTrackingValue(
+            "utm_term"
+          ),
+
+        fbclid:
+          getTrackingValue(
+            "fbclid"
+          ),
+
+        gclid:
+          getTrackingValue(
+            "gclid"
+          ),
+
+        /*
+          IMPORTANTE:
+          esse endereço faz o Apps Script
+          identificar que o clique pertence
+          à aba Bulhões Odontologia.
+        */
+
+        pagina:
+          window.location.href,
+
+        landing_page:
+          sessionStorage.getItem(
+            "bulhoes_landing_page"
+          ) ||
+          window.location.href,
+
+        first_referrer:
+          sessionStorage.getItem(
+            "bulhoes_first_referrer"
+          ) ||
+          "direct",
+
+        nome:
+          "",
+
+        telefone:
+          "",
+
+        status_lead:
+          "",
+
+        venda:
+          "",
+
+        valor_venda:
+          "",
+
+        crm_id:
+          ""
+
+      };
+
+
+      /*
+        no-cors é necessário porque o
+        Google Apps Script não retorna
+        cabeçalhos CORS tradicionais.
+
+        O POST é enviado normalmente.
+      */
+
+      fetch(
+        SHEETS_ENDPOINT,
+        {
+
+          method:
+            "POST",
+
+          mode:
+            "no-cors",
+
+          headers: {
+
+            "Content-Type":
+              "text/plain;charset=utf-8"
+
+          },
+
+          body:
+            JSON.stringify(
+              payload
+            ),
+
+          keepalive:
+            true
+
+        }
+      )
+      .catch(
+        function (error) {
+
+          console.log(
+            "Erro no rastreamento:",
+            error
+          );
+
+        }
+      );
+
+    }
+
+
+    /* =====================================================
+       CLIQUES NOS CARDS
+    ====================================================== */
+
     document.addEventListener(
-      'DOMContentLoaded',
+      "DOMContentLoaded",
       function () {
 
         const trackedLinks =
           document.querySelectorAll(
-            '[data-ga-event]'
+            "[data-ga-event]"
           );
 
 
@@ -439,31 +750,42 @@
           function (link) {
 
             link.addEventListener(
-              'click',
+              "click",
               function () {
 
                 const eventName =
                   link.getAttribute(
-                    'data-ga-event'
+                    "data-ga-event"
                   );
 
-                const destination =
+
+                const gaDestination =
                   link.getAttribute(
-                    'data-ga-destination'
+                    "data-ga-destination"
                   );
 
+
+                const sheetDestination =
+                  link.getAttribute(
+                    "data-sheet-destination"
+                  );
+
+
+                /* =========================
+                   GOOGLE ANALYTICS
+                ========================= */
 
                 if (
-                  typeof gtag === 'function'
+                  typeof gtag === "function"
                 ) {
 
                   gtag(
-                    'event',
+                    "event",
                     eventName,
                     {
 
                       destination:
-                        destination,
+                        gaDestination,
 
                       link_url:
                         link.href,
@@ -475,6 +797,15 @@
                   );
 
                 }
+
+
+                /* =========================
+                   GOOGLE SHEETS
+                ========================= */
+
+                sendToSheets(
+                  sheetDestination
+                );
 
               }
             );
