@@ -30,7 +30,6 @@ body {
     sans-serif;
 
   color: white;
-
   background: #120E0C;
 }
 
@@ -474,11 +473,11 @@ body {
 
 
 .cutout-paciente {
-  height: 238%;
+  height: 270%;
 
-  left: 11%;
+  left: 10%;
 
-  bottom: -93%;
+  bottom: -112%;
 }
 
 
@@ -494,7 +493,7 @@ body {
 
 /* =====================================================
    CARD 04
-   MOSTRAR MAIS DO ROSTO
+   MENOS ZOOM, MAIS ROSTO
 ===================================================== */
 
 .card-vip {
@@ -514,20 +513,15 @@ body {
 
   z-index: 0;
 
-  top: -10%;
-  left: -2%;
+  top: 0;
+  left: 0;
 
-  width: 67%;
-  height: 120%;
+  width: 52%;
+  height: 100%;
 
   object-fit: cover;
 
-  /*
-    desloca para pegar mais:
-    testa + olhos + nariz + sorriso
-  */
-
-  object-position: 17% 36%;
+  object-position: 18% 48%;
 }
 
 
@@ -542,7 +536,7 @@ body {
   bottom: 0;
   left: 0;
 
-  width: 71%;
+  width: 60%;
 
   pointer-events: none;
 
@@ -550,9 +544,9 @@ body {
     linear-gradient(
       90deg,
       rgba(18, 12, 10, 0.01) 0%,
-      rgba(18, 12, 10, 0.01) 48%,
-      rgba(22, 14, 12, 0.10) 60%,
-      rgba(21, 14, 11, 0.40) 78%,
+      rgba(18, 12, 10, 0.01) 45%,
+      rgba(22, 14, 12, 0.08) 58%,
+      rgba(21, 14, 11, 0.35) 77%,
       rgba(18, 14, 12, 0.92) 100%
     );
 }
@@ -560,7 +554,7 @@ body {
 
 /* =====================================================
    CARD 05
-   CONGELADO — NÃO MEXER
+   NÃO MEXER
 ===================================================== */
 
 .card-instituto {
@@ -641,10 +635,10 @@ body {
     linear-gradient(
       90deg,
       transparent 0%,
-      transparent 41%,
-      rgba(18, 12, 10, 0.07) 53%,
-      rgba(18, 12, 10, 0.38) 67%,
-      rgba(18, 12, 10, 0.82) 83%,
+      transparent 35%,
+      rgba(18, 12, 10, 0.06) 50%,
+      rgba(18, 12, 10, 0.34) 66%,
+      rgba(18, 12, 10, 0.80) 83%,
       #120E0C 100%
     );
 }
@@ -922,11 +916,11 @@ footer {
   /* 02 - MAIS ZOOM */
 
   .cutout-paciente {
-    height: 232%;
+    height: 260%;
 
-    left: 8%;
+    left: 7%;
 
-    bottom: -90%;
+    bottom: -107%;
   }
 
 
@@ -938,26 +932,26 @@ footer {
   }
 
 
-  /* 04 - MAIS ROSTO */
+  /* 04 - MENOS ZOOM */
 
   .card-vip .vip-photo {
-    top: -8%;
-    left: -2%;
+    width: 54%;
+    height: 100%;
 
-    width: 69%;
-    height: 118%;
+    left: 0;
+    top: 0;
 
     object-position:
-      16% 35%;
+      18% 47%;
   }
 
 
   .card-vip::before {
-    width: 73%;
+    width: 62%;
   }
 
 
-  /* 05 - CONGELADO */
+  /* 05 - NÃO MEXER */
 
   .cutout-larissa {
     height: 215%;
@@ -1045,25 +1039,21 @@ footer {
   /* 02 */
 
   .cutout-paciente {
-    height: 228%;
+    height: 255%;
 
-    left: 6%;
+    left: 5%;
 
-    bottom: -87%;
+    bottom: -104%;
   }
 
 
   /* 04 */
 
   .card-vip .vip-photo {
-    top: -7%;
-    left: -2%;
-
-    width: 71%;
-    height: 116%;
+    width: 56%;
 
     object-position:
-      15% 34%;
+      18% 47%;
   }
 
 
