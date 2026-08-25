@@ -1,12 +1,17 @@
 :root {
   --bege: #CCBCA6;
-  --dourado: #B89A74;
-  --marrom: #7A4D3A;
-  --marrom-2: #4A3025;
+  --dourado: #C29D70;
+
+  --marrom-1: #76503C;
+  --marrom-2: #4D3024;
+  --marrom-3: #2A1B16;
+
   --escuro: #120E0C;
-  --escuro-2: #1A120F;
+  --escuro-2: #18110E;
+
   --branco: #FFFFFF;
 }
+
 
 * {
   margin: 0;
@@ -14,13 +19,16 @@
   box-sizing: border-box;
 }
 
+
 html {
   scroll-behavior: smooth;
 }
 
+
 body {
   width: 100%;
   min-height: 100vh;
+
   overflow-x: hidden;
 
   font-family:
@@ -28,47 +36,44 @@ body {
     Arial,
     sans-serif;
 
-  color: var(--branco);
+  color: white;
 
   background:
-    radial-gradient(
-      ellipse at 50% 0%,
-      #6B4432 0%,
-      #472D23 27%,
-      #251814 53%,
-      #17100D 75%,
-      #100C0A 100%
-    );
+    #120E0C;
 }
 
 
+
 /* =====================================================
-   FUNDO GERAL
+   FUNDO
 ===================================================== */
 
 .page-background {
   position: fixed;
+
   inset: 0;
 
-  z-index: -10;
+  z-index: -20;
 
   pointer-events: none;
 
   background:
     radial-gradient(
-      ellipse at 50% 3%,
-      rgba(147, 91, 63, 0.46) 0%,
-      rgba(93, 55, 40, 0.26) 30%,
-      rgba(42, 27, 21, 0.13) 58%,
-      transparent 80%
+      ellipse at 50% 0%,
+      rgba(146, 87, 61, 0.50) 0%,
+      rgba(90, 53, 39, 0.28) 30%,
+      rgba(43, 28, 22, 0.15) 55%,
+      transparent 78%
     ),
+
     linear-gradient(
       180deg,
-      #1B120F 0%,
-      #17100D 45%,
+      #1D130F 0%,
+      #17100D 48%,
       #100C0A 100%
     );
 }
+
 
 
 /* =====================================================
@@ -83,51 +88,44 @@ body {
 
   min-height: 680px;
 
-  overflow: hidden;
-
   display: flex;
   align-items: center;
   justify-content: center;
 
+  overflow: hidden;
+
   background:
     radial-gradient(
-      circle at 50% 40%,
-      rgba(171, 112, 80, 0.28) 0%,
-      rgba(125, 76, 56, 0.18) 25%,
-      rgba(65, 39, 30, 0.10) 45%,
-      transparent 68%
-    ),
-    linear-gradient(
-      180deg,
-      #4A3025 0%,
-      #34221B 34%,
-      #251814 62%,
-      #17100D 85%,
+      ellipse at 50% 39%,
+      #704A38 0%,
+      #5C3A2D 18%,
+      #422A21 39%,
+      #2C1D17 61%,
+      #1B1310 79%,
       #120E0C 100%
     );
 }
 
-.hero-glow {
+
+.hero-light {
   position: absolute;
 
-  width: 70vw;
-  height: 70vw;
-
-  max-width: 900px;
-  max-height: 900px;
+  width: 780px;
+  height: 780px;
 
   border-radius: 50%;
 
   background:
     radial-gradient(
       circle,
-      rgba(187, 132, 96, 0.20) 0%,
-      rgba(142, 86, 62, 0.10) 38%,
+      rgba(214, 164, 119, 0.10) 0%,
+      rgba(170, 107, 73, 0.05) 40%,
       transparent 72%
     );
 
-  filter: blur(18px);
+  filter: blur(15px);
 }
+
 
 .hero::after {
   content: "";
@@ -136,78 +134,109 @@ body {
 
   inset: 0;
 
+  z-index: 1;
+
+  pointer-events: none;
+
   background:
     linear-gradient(
       180deg,
-      transparent 0%,
-      transparent 57%,
-      rgba(18, 13, 10, 0.28) 72%,
-      rgba(18, 13, 10, 0.78) 90%,
-      rgba(18, 13, 10, 0.99) 100%
+      rgba(18, 13, 10, 0) 0%,
+      rgba(18, 13, 10, 0.02) 50%,
+      rgba(18, 13, 10, 0.35) 73%,
+      rgba(18, 13, 10, 0.88) 91%,
+      #120E0C 100%
     );
-
-  pointer-events: none;
 }
+
+
+
+/* =====================================================
+   LOGO
+===================================================== */
 
 .hero-content {
   position: relative;
 
-  z-index: 2;
-
-  width: min(620px, 80vw);
+  z-index: 3;
 
   display: flex;
   flex-direction: column;
+
   align-items: center;
 
   text-align: center;
 
-  transform: translateY(-3vh);
+  transform:
+    translateY(-4vh);
 }
 
 
-/* =====================================================
-   LOGO HERO
-===================================================== */
+.logo-area {
+  position: relative;
+
+  width:
+    min(
+      510px,
+      75vw
+    );
+
+  height:
+    min(
+      510px,
+      75vw
+    );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/*
+  O ARQUIVO TEM FUNDO CLARO.
+
+  MULTIPLY FAZ ESSE FUNDO
+  SE FUNDIR AO MARROM DA HERO.
+*/
 
 .hero-logo {
   display: block;
 
-  width: min(520px, 72vw);
-  height: auto;
+  width: 100%;
+  height: 100%;
 
-  /*
-    O arquivo do logo tem fundo claro.
-    Esse blend ajuda a integrar o fundo branco
-    ao marrom da hero sem parecer um quadrado.
-  */
+  object-fit: contain;
 
-  mix-blend-mode: screen;
+  mix-blend-mode: multiply;
 
   filter:
-    contrast(0.96)
-    brightness(1.04)
-    sepia(0.07);
+    contrast(1.10)
+    brightness(1.14)
+    sepia(0.20)
+    saturate(0.90);
 
-  opacity: 0.97;
+  opacity: 0.96;
 }
 
+
 .hero-phrase {
-  margin-top: 20px;
+  margin-top: -50px;
 
   font-size:
     clamp(
-      14px,
-      1.5vw,
-      20px
+      15px,
+      1.4vw,
+      19px
     );
 
   font-weight: 400;
 
-  letter-spacing: 1px;
+  letter-spacing: 0.7px;
 
-  color: #D6C5AE;
+  color: #D6B890;
 }
+
 
 
 /* =====================================================
@@ -222,9 +251,11 @@ body {
   left: 50%;
   bottom: 24px;
 
-  transform: translateX(-50%);
+  transform:
+    translateX(-50%);
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -242,12 +273,12 @@ body {
 
   border:
     1px solid
-    rgba(204, 188, 166, 0.45);
+    rgba(204, 188, 166, 0.50);
 
   border-radius: 999px;
 
   background:
-    rgba(14, 10, 8, 0.42);
+    rgba(15, 10, 8, 0.40);
 
   backdrop-filter:
     blur(12px);
@@ -255,9 +286,9 @@ body {
   -webkit-backdrop-filter:
     blur(12px);
 
-  color: white;
-
   text-decoration: none;
+
+  color: white;
 
   font-size: 11px;
 
@@ -266,15 +297,17 @@ body {
   letter-spacing: 1.5px;
 }
 
+
 .links-label span {
-  color: #D6AF7D;
+  color: var(--dourado);
 
   font-size: 18px;
 }
 
 
+
 /* =====================================================
-   SEÇÃO DOS LINKS
+   SEÇÃO LINKS
 ===================================================== */
 
 .links-section {
@@ -292,11 +325,12 @@ body {
   background:
     linear-gradient(
       180deg,
-      rgba(18, 13, 10, 0.98) 0%,
-      rgba(18, 13, 10, 0.94) 17%,
-      rgba(16, 12, 10, 0.98) 100%
+      #120E0C 0%,
+      #130E0C 35%,
+      #100C0A 100%
     );
 }
+
 
 .links-section::before {
   content: "";
@@ -307,18 +341,19 @@ body {
   left: 0;
   right: 0;
 
-  height: 470px;
+  height: 450px;
 
   pointer-events: none;
 
   background:
     radial-gradient(
       ellipse at center top,
-      rgba(130, 80, 55, 0.21) 0%,
-      rgba(81, 48, 35, 0.12) 39%,
+      rgba(119, 70, 49, 0.18) 0%,
+      rgba(67, 41, 31, 0.09) 44%,
       transparent 75%
     );
 }
+
 
 .links-wrapper {
   position: relative;
@@ -334,6 +369,7 @@ body {
   margin:
     0 auto;
 }
+
 
 
 /* =====================================================
@@ -356,9 +392,10 @@ body {
 
   border:
     1px solid
-    rgba(204, 188, 166, 0.20);
+    rgba(204, 188, 166, 0.22);
 
-  background: #100C0A;
+  background:
+    #17100D;
 
   color: white;
 
@@ -366,10 +403,11 @@ body {
 
   box-shadow:
     0 18px 55px
-    rgba(0, 0, 0, 0.20);
+    rgba(0, 0, 0, 0.18);
 
   isolation: isolate;
 }
+
 
 .card-photo {
   position: absolute;
@@ -382,14 +420,170 @@ body {
   height: 100%;
 
   object-fit: cover;
-
-  transition:
-    transform 0.5s ease;
 }
 
-.visual-card:hover .card-photo {
-  transform: scale(1.015);
+
+
+/* =====================================================
+   CARD 01
+===================================================== */
+
+.card-avaliacao .card-photo {
+
+  /*
+    IMAGEM MAIS PARA A DIREITA:
+    MAIS SORRISO VISÍVEL
+  */
+
+  object-position:
+    76% 50%;
 }
+
+
+
+/* =====================================================
+   CARD 02
+===================================================== */
+
+.card-paciente {
+  background:
+    linear-gradient(
+      90deg,
+      #A98F84 0%,
+      #80675E 23%,
+      #4B352D 49%,
+      #271A16 73%,
+      #120E0C 100%
+    );
+}
+
+
+.portrait-area {
+  position: absolute;
+
+  z-index: 0;
+
+  top: 0;
+  bottom: 0;
+
+  overflow: hidden;
+}
+
+
+.paciente-area {
+  left: 0;
+
+  width: 58%;
+}
+
+
+.portrait-photo {
+  position: absolute;
+
+  display: block;
+
+  max-width: none;
+}
+
+
+.paciente-photo {
+
+  /*
+    NÃO USAMOS COVER DO CARD TODO.
+
+    ASSIM CONSEGUIMOS MOSTRAR
+    O ROSTO DA PACIENTE DE VERDADE.
+  */
+
+  height: 160%;
+
+  width: auto;
+
+  left: 2%;
+
+  top: -28%;
+}
+
+
+
+/* =====================================================
+   CARD 03
+===================================================== */
+
+.card-tratamentos .card-photo {
+
+  /*
+    SOBE A FOTO:
+    MENOS GENGIVA
+  */
+
+  object-position:
+    54% 70%;
+}
+
+
+
+/* =====================================================
+   CARD 04 VIP
+===================================================== */
+
+.card-vip .vip-photo {
+
+  /*
+    PRIORIZA A METADE ESQUERDA
+    ONDE ESTÁ O ROSTO.
+  */
+
+  object-position:
+    22% 50%;
+}
+
+
+
+/* =====================================================
+   CARD 05 INSTITUTO
+===================================================== */
+
+.card-instituto {
+  background:
+    linear-gradient(
+      90deg,
+      #251915 0%,
+      #34231D 31%,
+      #6D5550 66%,
+      #95817D 100%
+    );
+}
+
+
+.larissa-area {
+  right: 0;
+
+  width: 61%;
+}
+
+
+.larissa-photo {
+
+  /*
+    FOTO MENOR / MAIS ABERTA
+    PARA APARECER MAIS A LARI.
+  */
+
+  height: 155%;
+
+  width: auto;
+
+  right: 4%;
+
+  top: -26%;
+}
+
+
+
+/* =====================================================
+   OVERLAYS
+===================================================== */
 
 .card-overlay {
   position: absolute;
@@ -400,42 +594,40 @@ body {
 }
 
 
-/* =====================================================
-   DEGRADÊS
-===================================================== */
-
 .overlay-left {
   background:
     linear-gradient(
       90deg,
-      rgba(10, 7, 6, 0.98) 0%,
-      rgba(12, 8, 7, 0.91) 14%,
-      rgba(18, 12, 10, 0.78) 27%,
-      rgba(31, 20, 15, 0.54) 40%,
-      rgba(37, 23, 18, 0.31) 52%,
-      rgba(26, 17, 13, 0.14) 65%,
+      rgba(12, 8, 7, 0.99) 0%,
+      rgba(14, 9, 8, 0.94) 14%,
+      rgba(20, 13, 10, 0.81) 28%,
+      rgba(32, 20, 15, 0.58) 41%,
+      rgba(37, 23, 18, 0.35) 52%,
+      rgba(27, 17, 13, 0.16) 65%,
       transparent 100%
     );
 }
+
 
 .overlay-right {
   background:
     linear-gradient(
       90deg,
       transparent 0%,
-      rgba(17, 11, 9, 0.03) 22%,
-      rgba(25, 16, 12, 0.11) 36%,
-      rgba(35, 22, 17, 0.27) 50%,
-      rgba(29, 19, 15, 0.52) 64%,
-      rgba(20, 14, 11, 0.76) 78%,
-      rgba(14, 10, 8, 0.93) 91%,
-      rgba(12, 9, 8, 0.99) 100%
+      rgba(17, 11, 9, 0.02) 24%,
+      rgba(26, 16, 13, 0.10) 37%,
+      rgba(36, 23, 18, 0.28) 51%,
+      rgba(29, 19, 15, 0.55) 65%,
+      rgba(20, 14, 11, 0.79) 79%,
+      rgba(14, 10, 8, 0.95) 92%,
+      #120E0C 100%
     );
 }
 
 
+
 /* =====================================================
-   CONTEÚDO DOS CARDS
+   TEXTO
 ===================================================== */
 
 .card-content {
@@ -445,18 +637,22 @@ body {
 
   top: 50%;
 
-  transform: translateY(-50%);
+  transform:
+    translateY(-50%);
 
   width: 45%;
 }
+
 
 .card-content-left {
   left: 42px;
 }
 
+
 .card-content-right {
   right: 42px;
 }
+
 
 .card-eyebrow {
   display: block;
@@ -472,6 +668,7 @@ body {
   letter-spacing: 2px;
 }
 
+
 .card-content h2 {
   font-size:
     clamp(
@@ -486,6 +683,7 @@ body {
 
   letter-spacing: -0.8px;
 }
+
 
 .card-content p {
   margin-top: 10px;
@@ -503,59 +701,17 @@ body {
     );
 }
 
+
 .card-line {
   width: 30px;
-
   height: 1px;
 
   margin-top: 14px;
 
-  background: #D1AB7A;
+  background:
+    #D1AB7A;
 }
 
-
-/* =====================================================
-   AJUSTE INDIVIDUAL DAS FOTOS
-===================================================== */
-
-/* 01 - sorriso */
-
-.card-avaliacao .card-photo {
-  object-position:
-    63% 53%;
-}
-
-
-/* 02 - paciente de rosto */
-
-.card-paciente .card-photo {
-  object-position:
-    46% 29%;
-}
-
-
-/* 03 - tratamentos */
-
-.card-tratamentos .card-photo {
-  object-position:
-    54% 43%;
-}
-
-
-/* 04 - VIP */
-
-.card-vip .card-photo {
-  object-position:
-    50% 50%;
-}
-
-
-/* 05 - Larissa */
-
-.card-instituto .card-photo {
-  object-position:
-    69% 24%;
-}
 
 
 /* =====================================================
@@ -579,42 +735,12 @@ footer {
 }
 
 
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media (max-width: 900px) {
-
-  .hero-logo {
-    width:
-      min(
-        480px,
-        74vw
-      );
-  }
-
-  .links-wrapper {
-    max-width: 690px;
-  }
-}
-
 
 /* =====================================================
    MOBILE
 ===================================================== */
 
 @media (max-width: 700px) {
-
-  body {
-    background-attachment: scroll;
-  }
-
-
-  /*
-    Mesmo conceito da LP da Lari:
-    abre no topo e deixa o começo
-    do primeiro card aparecendo.
-  */
 
   .hero {
     height: 72svh;
@@ -623,35 +749,39 @@ footer {
     max-height: 590px;
   }
 
+
   .hero-content {
     width:
       calc(
-        100% - 44px
+        100% - 40px
       );
 
     transform:
-      translateY(-2vh);
+      translateY(-3vh);
   }
 
-  .hero-logo {
+
+  .logo-area {
     width:
       min(
         350px,
-        84vw
+        88vw
+      );
+
+    height:
+      min(
+        350px,
+        88vw
       );
   }
 
-  .hero-phrase {
-    margin-top: 12px;
 
-    max-width: 280px;
+  .hero-phrase {
+    margin-top: -34px;
 
     font-size: 11px;
-
-    line-height: 1.5;
-
-    letter-spacing: 0.6px;
   }
+
 
   .links-label {
     bottom: 15px;
@@ -672,9 +802,11 @@ footer {
     font-size: 8px;
   }
 
+
   .links-label span {
     font-size: 15px;
   }
+
 
   .links-section {
     min-height: auto;
@@ -685,11 +817,6 @@ footer {
       34px;
   }
 
-  .links-section::before {
-    top: -150px;
-
-    height: 310px;
-  }
 
   .visual-card {
     height: 132px;
@@ -699,17 +826,21 @@ footer {
     border-radius: 21px;
   }
 
+
   .card-content {
-    width: 50%;
+    width: 49%;
   }
+
 
   .card-content-left {
     left: 18px;
   }
 
+
   .card-content-right {
     right: 18px;
   }
+
 
   .card-eyebrow {
     margin-bottom: 6px;
@@ -719,6 +850,7 @@ footer {
     letter-spacing: 1.2px;
   }
 
+
   .card-content h2 {
     font-size:
       clamp(
@@ -726,15 +858,15 @@ footer {
         4.8vw,
         20px
       );
-
-    line-height: 1.02;
   }
+
 
   .card-content p {
     margin-top: 6px;
 
     font-size: 7px;
   }
+
 
   .card-line {
     width: 20px;
@@ -743,41 +875,75 @@ footer {
   }
 
 
-  /* MOBILE - enquadramentos */
+
+  /* CARD 01 */
 
   .card-avaliacao .card-photo {
     object-position:
-      68% 50%;
+      78% 50%;
   }
 
-  .card-paciente .card-photo {
-    object-position:
-      42% 27%;
+
+
+  /* CARD 02 */
+
+  .paciente-area {
+    width: 62%;
   }
+
+
+  .paciente-photo {
+    height: 155%;
+
+    left: -2%;
+
+    top: -25%;
+  }
+
+
+
+  /* CARD 03 */
 
   .card-tratamentos .card-photo {
     object-position:
-      52% 38%;
+      54% 72%;
   }
 
-  .card-vip .card-photo {
+
+
+  /* CARD 04 */
+
+  .card-vip .vip-photo {
     object-position:
-      50% 50%;
+      20% 50%;
   }
 
-  .card-instituto .card-photo {
-    object-position:
-      69% 22%;
+
+
+  /* CARD 05 */
+
+  .larissa-area {
+    width: 64%;
   }
+
+
+  .larissa-photo {
+    height: 148%;
+
+    right: 0;
+
+    top: -22%;
+  }
+
 
   footer {
     padding-top: 22px;
 
     font-size: 6.5px;
-
-    letter-spacing: 1.4px;
   }
+
 }
+
 
 
 /* =====================================================
@@ -793,31 +959,49 @@ footer {
     max-height: 570px;
   }
 
-  .hero-logo {
-    width: 84vw;
+
+  .logo-area {
+    width: 87vw;
+    height: 87vw;
   }
+
 
   .hero-phrase {
     font-size: 10px;
   }
 
+
   .visual-card {
     height: 122px;
   }
+
 
   .card-content-left {
     left: 15px;
   }
 
+
   .card-content-right {
     right: 15px;
   }
+
 
   .card-content h2 {
     font-size: 16px;
   }
 
-  .card-content p {
-    font-size: 6.5px;
+
+  .paciente-photo {
+    height: 150%;
+
+    left: -5%;
   }
+
+
+  .larissa-photo {
+    height: 145%;
+
+    right: -3%;
+  }
+
 }
