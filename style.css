@@ -505,7 +505,7 @@ body {
 
   object-fit: cover;
 
-  object-position: 22% 50%;
+  object-position: 22% 47%;
 }
 
 .card-vip::before {
@@ -900,7 +900,7 @@ footer {
     object-fit: cover;
 
     object-position:
-      22% 50%;
+      22% 47%;
   }
 
   .card-vip::before {
@@ -1006,7 +1006,7 @@ footer {
     object-fit: cover;
 
     object-position:
-      22% 50%;
+      22% 47%;
   }
 
 
