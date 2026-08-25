@@ -10,14 +10,41 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>
-    Bulhões Odontologia
-  </title>
+  <title>Bulhões Odontologia</title>
 
   <meta
     name="description"
     content="Bulhões Odontologia e Estética. Naturalidade é o nosso maior luxo."
   >
+
+
+  <!-- =====================================================
+       GOOGLE ANALYTICS 4
+       BULHÕES ODONTOLOGIA
+       ID: G-L507RBK5JD
+  ====================================================== -->
+
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-L507RBK5JD"
+  ></script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-L507RBK5JD');
+  </script>
+
+
+  <!-- =====================================================
+       FONTES
+  ====================================================== -->
 
   <link
     rel="preconnect"
@@ -34,6 +61,11 @@
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   >
+
+
+  <!-- =====================================================
+       CSS
+  ====================================================== -->
 
   <link
     rel="stylesheet"
@@ -66,16 +98,16 @@
     <div class="hero-content">
 
 
-      <!-- LOGO / SÍMBOLO -->
+      <!-- SÍMBOLO -->
 
       <img
-        src="logo.png"
+        src="simbolo-bulhoes.png"
         alt="Bulhões Odontologia"
         class="hero-symbol"
       >
 
 
-      <!-- NOME -->
+      <!-- MARCA -->
 
       <div class="hero-brand">
 
@@ -117,7 +149,7 @@
 
 
   <!-- =====================================================
-       LINKS / CARDS
+       CARDS
   ====================================================== -->
 
   <main class="links-section">
@@ -137,6 +169,8 @@
         target="_blank"
         rel="noopener noreferrer"
         class="visual-card card-avaliacao"
+        data-ga-event="click_avaliacao"
+        data-ga-destination="whatsapp_avaliacao"
       >
 
 
@@ -153,7 +187,7 @@
         <div class="card-content card-content-left">
 
           <span class="card-eyebrow">
-            SEU NOVO SORRISO COMEÇA AQUI
+            BULHÕES ODONTOLOGIA
           </span>
 
           <h2>
@@ -184,12 +218,14 @@
         target="_blank"
         rel="noopener noreferrer"
         class="visual-card card-paciente"
+        data-ga-event="click_paciente"
+        data-ga-destination="whatsapp_paciente"
       >
 
 
         <!--
-          A foto atual do Card 2 é aplicada pelo CSS:
-          paciente-card2certo.JPG
+          A imagem paciente-card2certo.JPG
+          é aplicada diretamente pelo CSS.
         -->
 
 
@@ -222,7 +258,7 @@
 
       <!-- =================================================
            CARD 03
-           TRATAMENTOS / SITE
+           SITE
       ================================================== -->
 
       <a
@@ -230,6 +266,8 @@
         target="_blank"
         rel="noopener noreferrer"
         class="visual-card card-tratamentos"
+        data-ga-event="click_site"
+        data-ga-destination="site_bulhoes"
       >
 
 
@@ -277,11 +315,13 @@
         target="_blank"
         rel="noopener noreferrer"
         class="visual-card card-vip"
+        data-ga-event="click_grupo_vip"
+        data-ga-destination="whatsapp_grupo_vip"
       >
 
 
         <img
-          src="vip.jpg"
+          src="vip.png"
           alt="Grupo VIP Bulhões"
           class="vip-photo"
         >
@@ -293,15 +333,16 @@
         <div class="card-content card-content-right">
 
           <span class="card-eyebrow">
-            BENEFÍCIOS EXCLUSIVOS
+            BULHÕES ODONTOLOGIA
           </span>
 
           <h2>
-            GRUPO VIP
+            GRUPO<br>
+            VIP
           </h2>
 
           <p>
-            Faça parte da nossa comunidade
+            Faça parte do nosso grupo
           </p>
 
           <div class="card-line"></div>
@@ -323,6 +364,8 @@
         target="_blank"
         rel="noopener noreferrer"
         class="visual-card card-instituto"
+        data-ga-event="click_instituto"
+        data-ga-destination="whatsapp_instituto"
       >
 
 
@@ -365,15 +408,84 @@
       ================================================== -->
 
       <footer>
-
         © 2026 BULHÕES ODONTOLOGIA
-
       </footer>
 
 
     </div>
 
   </main>
+
+
+
+  <!-- =====================================================
+       RASTREAMENTO DOS CLIQUES
+       GOOGLE ANALYTICS
+  ====================================================== -->
+
+  <script>
+
+    document.addEventListener(
+      'DOMContentLoaded',
+      function () {
+
+        const trackedLinks =
+          document.querySelectorAll(
+            '[data-ga-event]'
+          );
+
+
+        trackedLinks.forEach(
+          function (link) {
+
+            link.addEventListener(
+              'click',
+              function () {
+
+                const eventName =
+                  link.getAttribute(
+                    'data-ga-event'
+                  );
+
+                const destination =
+                  link.getAttribute(
+                    'data-ga-destination'
+                  );
+
+
+                if (
+                  typeof gtag === 'function'
+                ) {
+
+                  gtag(
+                    'event',
+                    eventName,
+                    {
+
+                      destination:
+                        destination,
+
+                      link_url:
+                        link.href,
+
+                      page_location:
+                        window.location.href
+
+                    }
+                  );
+
+                }
+
+              }
+            );
+
+          }
+        );
+
+      }
+    );
+
+  </script>
 
 
 </body>
