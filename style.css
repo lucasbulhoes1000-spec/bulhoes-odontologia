@@ -1,14 +1,8 @@
 :root {
   --bege: #CCBCA6;
-  --dourado: #C29D70;
-
-  --marrom-1: #76503C;
-  --marrom-2: #4D3024;
-  --marrom-3: #2A1B16;
-
+  --dourado: #C59A65;
   --escuro: #120E0C;
   --escuro-2: #18110E;
-
   --branco: #FFFFFF;
 }
 
@@ -38,8 +32,7 @@ body {
 
   color: white;
 
-  background:
-    #120E0C;
+  background: #120E0C;
 }
 
 
@@ -59,17 +52,17 @@ body {
 
   background:
     radial-gradient(
-      ellipse at 50% 0%,
-      rgba(146, 87, 61, 0.50) 0%,
-      rgba(90, 53, 39, 0.28) 30%,
-      rgba(43, 28, 22, 0.15) 55%,
-      transparent 78%
+      ellipse at 50% 3%,
+      rgba(143, 84, 58, 0.48) 0%,
+      rgba(88, 50, 37, 0.28) 30%,
+      rgba(43, 27, 21, 0.14) 56%,
+      transparent 79%
     ),
 
     linear-gradient(
       180deg,
-      #1D130F 0%,
-      #17100D 48%,
+      #1C130F 0%,
+      #17100D 45%,
       #100C0A 100%
     );
 }
@@ -89,6 +82,7 @@ body {
   min-height: 680px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -96,12 +90,12 @@ body {
 
   background:
     radial-gradient(
-      ellipse at 50% 39%,
-      #704A38 0%,
-      #5C3A2D 18%,
-      #422A21 39%,
-      #2C1D17 61%,
-      #1B1310 79%,
+      ellipse at 50% 36%,
+      #704630 0%,
+      #573526 20%,
+      #3C261D 40%,
+      #281A15 61%,
+      #1A120F 80%,
       #120E0C 100%
     );
 }
@@ -110,17 +104,17 @@ body {
 .hero-light {
   position: absolute;
 
-  width: 780px;
-  height: 780px;
+  width: 820px;
+  height: 820px;
 
   border-radius: 50%;
 
   background:
     radial-gradient(
       circle,
-      rgba(214, 164, 119, 0.10) 0%,
-      rgba(170, 107, 73, 0.05) 40%,
-      transparent 72%
+      rgba(211, 153, 103, 0.11) 0%,
+      rgba(158, 94, 65, 0.05) 42%,
+      transparent 74%
     );
 
   filter: blur(15px);
@@ -141,19 +135,14 @@ body {
   background:
     linear-gradient(
       180deg,
-      rgba(18, 13, 10, 0) 0%,
-      rgba(18, 13, 10, 0.02) 50%,
-      rgba(18, 13, 10, 0.35) 73%,
-      rgba(18, 13, 10, 0.88) 91%,
+      transparent 0%,
+      transparent 50%,
+      rgba(18, 13, 10, 0.28) 72%,
+      rgba(18, 13, 10, 0.88) 92%,
       #120E0C 100%
     );
 }
 
-
-
-/* =====================================================
-   LOGO
-===================================================== */
 
 .hero-content {
   position: relative;
@@ -168,40 +157,63 @@ body {
   text-align: center;
 
   transform:
-    translateY(-4vh);
+    translateY(-3vh);
 }
 
 
-.logo-area {
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.hero-logo-wrap {
   position: relative;
 
   width:
     min(
-      510px,
+      560px,
       75vw
     );
 
-  height:
-    min(
-      510px,
-      75vw
-    );
+  aspect-ratio: 1 / 1;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
+
+  overflow: hidden;
 }
 
 
-/*
-  O ARQUIVO TEM FUNDO CLARO.
+.hero-logo-wrap::before {
+  content: "";
 
-  MULTIPLY FAZ ESSE FUNDO
-  SE FUNDIR AO MARROM DA HERO.
-*/
+  position: absolute;
+
+  inset: 14%;
+
+  z-index: 0;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(106, 61, 43, 0.90) 0%,
+      rgba(77, 43, 32, 0.78) 38%,
+      rgba(48, 29, 23, 0.35) 64%,
+      transparent 80%
+    );
+
+  filter: blur(32px);
+}
+
 
 .hero-logo {
-  display: block;
+  position: relative;
+
+  z-index: 1;
 
   width: 100%;
   height: 100%;
@@ -211,30 +223,30 @@ body {
   mix-blend-mode: multiply;
 
   filter:
-    contrast(1.10)
-    brightness(1.14)
-    sepia(0.20)
-    saturate(0.90);
+    brightness(0.93)
+    contrast(1.32)
+    sepia(0.28)
+    saturate(1.15);
 
-  opacity: 0.96;
+  opacity: 0.93;
 }
 
 
 .hero-phrase {
-  margin-top: -50px;
+  margin-top: -62px;
 
   font-size:
     clamp(
-      15px,
-      1.4vw,
-      19px
+      16px,
+      1.5vw,
+      20px
     );
 
   font-weight: 400;
 
   letter-spacing: 0.7px;
 
-  color: #D6B890;
+  color: #D4AC7C;
 }
 
 
@@ -273,12 +285,12 @@ body {
 
   border:
     1px solid
-    rgba(204, 188, 166, 0.50);
+    rgba(197, 154, 101, 0.72);
 
   border-radius: 999px;
 
   background:
-    rgba(15, 10, 8, 0.40);
+    rgba(15, 10, 8, 0.39);
 
   backdrop-filter:
     blur(12px);
@@ -307,7 +319,7 @@ body {
 
 
 /* =====================================================
-   SEÇÃO LINKS
+   LINKS
 ===================================================== */
 
 .links-section {
@@ -326,7 +338,7 @@ body {
     linear-gradient(
       180deg,
       #120E0C 0%,
-      #130E0C 35%,
+      #130E0C 34%,
       #100C0A 100%
     );
 }
@@ -337,7 +349,7 @@ body {
 
   position: absolute;
 
-  top: -220px;
+  top: -210px;
   left: 0;
   right: 0;
 
@@ -348,9 +360,9 @@ body {
   background:
     radial-gradient(
       ellipse at center top,
-      rgba(119, 70, 49, 0.18) 0%,
-      rgba(67, 41, 31, 0.09) 44%,
-      transparent 75%
+      rgba(118, 68, 47, 0.18) 0%,
+      rgba(66, 40, 30, 0.09) 45%,
+      transparent 76%
     );
 }
 
@@ -362,7 +374,7 @@ body {
 
   width:
     min(
-      800px,
+      850px,
       100%
     );
 
@@ -392,7 +404,7 @@ body {
 
   border:
     1px solid
-    rgba(204, 188, 166, 0.22);
+    rgba(204, 188, 166, 0.21);
 
   background:
     #17100D;
@@ -429,14 +441,8 @@ body {
 ===================================================== */
 
 .card-avaliacao .card-photo {
-
-  /*
-    IMAGEM MAIS PARA A DIREITA:
-    MAIS SORRISO VISÍVEL
-  */
-
   object-position:
-    76% 50%;
+    79% 50%;
 }
 
 
@@ -449,35 +455,41 @@ body {
   background:
     linear-gradient(
       90deg,
-      #A98F84 0%,
-      #80675E 23%,
-      #4B352D 49%,
-      #271A16 73%,
-      #120E0C 100%
+      #5B4137 0%,
+      #3F2B24 35%,
+      #281B17 62%,
+      #17100D 100%
     );
 }
 
 
-.portrait-area {
+.image-zone {
   position: absolute;
-
-  z-index: 0;
 
   top: 0;
   bottom: 0;
+
+  z-index: 0;
 
   overflow: hidden;
 }
 
 
-.paciente-area {
+.image-zone-left {
   left: 0;
 
   width: 58%;
 }
 
 
-.portrait-photo {
+.image-zone-right {
+  right: 0;
+
+  width: 61%;
+}
+
+
+.zone-photo {
   position: absolute;
 
   display: block;
@@ -487,21 +499,39 @@ body {
 
 
 .paciente-photo {
-
-  /*
-    NÃO USAMOS COVER DO CARD TODO.
-
-    ASSIM CONSEGUIMOS MOSTRAR
-    O ROSTO DA PACIENTE DE VERDADE.
-  */
-
-  height: 160%;
+  height: 152%;
 
   width: auto;
 
-  left: 2%;
+  left: 1%;
 
-  top: -28%;
+  top: -25%;
+
+  mix-blend-mode: normal;
+}
+
+
+.card-paciente::before {
+  content: "";
+
+  position: absolute;
+
+  z-index: 1;
+
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  width: 59%;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(85, 54, 42, 0.18) 0%,
+      rgba(64, 40, 32, 0.08) 52%,
+      rgba(34, 22, 18, 0.22) 78%,
+      rgba(24, 16, 13, 0.82) 100%
+    );
 }
 
 
@@ -511,72 +541,75 @@ body {
 ===================================================== */
 
 .card-tratamentos .card-photo {
-
-  /*
-    SOBE A FOTO:
-    MENOS GENGIVA
-  */
-
   object-position:
-    54% 70%;
+    54% 64%;
 }
 
 
 
 /* =====================================================
-   CARD 04 VIP
+   CARD 04
 ===================================================== */
 
 .card-vip .vip-photo {
+  width: 118%;
 
-  /*
-    PRIORIZA A METADE ESQUERDA
-    ONDE ESTÁ O ROSTO.
-  */
+  left: -18%;
 
   object-position:
-    22% 50%;
+    18% 50%;
 }
 
 
 
 /* =====================================================
-   CARD 05 INSTITUTO
+   CARD 05
 ===================================================== */
 
 .card-instituto {
   background:
     linear-gradient(
       90deg,
-      #251915 0%,
-      #34231D 31%,
-      #6D5550 66%,
-      #95817D 100%
+      #251815 0%,
+      #33221C 36%,
+      #4C3932 67%,
+      #6B5751 100%
     );
 }
 
 
-.larissa-area {
-  right: 0;
-
-  width: 61%;
-}
-
-
 .larissa-photo {
-
-  /*
-    FOTO MENOR / MAIS ABERTA
-    PARA APARECER MAIS A LARI.
-  */
-
-  height: 155%;
+  height: 142%;
 
   width: auto;
 
-  right: 4%;
+  right: 2%;
 
-  top: -26%;
+  top: -20%;
+}
+
+
+.card-instituto::before {
+  content: "";
+
+  position: absolute;
+
+  z-index: 1;
+
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  width: 63%;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(38, 24, 20, 0.95) 0%,
+      rgba(45, 29, 24, 0.55) 20%,
+      rgba(59, 41, 35, 0.16) 48%,
+      transparent 100%
+    );
 }
 
 
@@ -590,7 +623,7 @@ body {
 
   inset: 0;
 
-  z-index: 1;
+  z-index: 2;
 }
 
 
@@ -599,11 +632,11 @@ body {
     linear-gradient(
       90deg,
       rgba(12, 8, 7, 0.99) 0%,
-      rgba(14, 9, 8, 0.94) 14%,
-      rgba(20, 13, 10, 0.81) 28%,
-      rgba(32, 20, 15, 0.58) 41%,
-      rgba(37, 23, 18, 0.35) 52%,
-      rgba(27, 17, 13, 0.16) 65%,
+      rgba(15, 10, 8, 0.93) 13%,
+      rgba(21, 14, 11, 0.80) 27%,
+      rgba(32, 21, 16, 0.57) 40%,
+      rgba(37, 23, 18, 0.33) 52%,
+      rgba(25, 16, 13, 0.14) 66%,
       transparent 100%
     );
 }
@@ -614,10 +647,10 @@ body {
     linear-gradient(
       90deg,
       transparent 0%,
-      rgba(17, 11, 9, 0.02) 24%,
-      rgba(26, 16, 13, 0.10) 37%,
-      rgba(36, 23, 18, 0.28) 51%,
-      rgba(29, 19, 15, 0.55) 65%,
+      rgba(17, 11, 9, 0.02) 23%,
+      rgba(25, 16, 12, 0.10) 36%,
+      rgba(35, 22, 17, 0.27) 50%,
+      rgba(29, 19, 15, 0.54) 64%,
       rgba(20, 14, 11, 0.79) 79%,
       rgba(14, 10, 8, 0.95) 92%,
       #120E0C 100%
@@ -633,7 +666,7 @@ body {
 .card-content {
   position: absolute;
 
-  z-index: 3;
+  z-index: 4;
 
   top: 50%;
 
@@ -697,13 +730,14 @@ body {
       255,
       255,
       255,
-      0.70
+      0.72
     );
 }
 
 
 .card-line {
   width: 30px;
+
   height: 1px;
 
   margin-top: 14px;
@@ -761,23 +795,17 @@ footer {
   }
 
 
-  .logo-area {
+  .hero-logo-wrap {
     width:
       min(
-        350px,
-        88vw
-      );
-
-    height:
-      min(
-        350px,
+        360px,
         88vw
       );
   }
 
 
   .hero-phrase {
-    margin-top: -34px;
+    margin-top: -42px;
 
     font-size: 11px;
   }
@@ -876,63 +904,67 @@ footer {
 
 
 
-  /* CARD 01 */
+  /* 01 */
 
   .card-avaliacao .card-photo {
     object-position:
-      78% 50%;
+      81% 50%;
   }
 
 
 
-  /* CARD 02 */
+  /* 02 */
 
-  .paciente-area {
-    width: 62%;
+  .image-zone-left {
+    width: 61%;
   }
 
 
   .paciente-photo {
-    height: 155%;
+    height: 148%;
 
-    left: -2%;
+    left: -1%;
 
-    top: -25%;
+    top: -23%;
   }
 
 
 
-  /* CARD 03 */
+  /* 03 */
 
   .card-tratamentos .card-photo {
     object-position:
-      54% 72%;
+      54% 62%;
   }
 
 
 
-  /* CARD 04 */
+  /* 04 */
 
   .card-vip .vip-photo {
+    width: 128%;
+
+    left: -24%;
+
     object-position:
-      20% 50%;
+      16% 50%;
   }
 
 
 
-  /* CARD 05 */
+  /* 05 */
 
-  .larissa-area {
+  .image-zone-right {
     width: 64%;
   }
 
 
   .larissa-photo {
-    height: 148%;
+    height: 137%;
 
-    right: 0;
+    right: -1%;
 
-    top: -22%;
+    top: -17%;
   }
 
 
@@ -960,9 +992,8 @@ footer {
   }
 
 
-  .logo-area {
-    width: 87vw;
-    height: 87vw;
+  .hero-logo-wrap {
+    width: 88vw;
   }
 
 
@@ -992,14 +1023,14 @@ footer {
 
 
   .paciente-photo {
-    height: 150%;
+    height: 145%;
 
-    left: -5%;
+    left: -4%;
   }
 
 
   .larissa-photo {
-    height: 145%;
+    height: 134%;
 
     right: -3%;
   }
