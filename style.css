@@ -6,18 +6,15 @@
   --branco: #FFFFFF;
 }
 
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-
 html {
   scroll-behavior: smooth;
 }
-
 
 body {
   width: 100%;
@@ -92,7 +89,6 @@ body {
     );
 }
 
-
 .hero-light {
   position: absolute;
 
@@ -114,7 +110,6 @@ body {
   filter: blur(16px);
 }
 
-
 .hero::after {
   content: "";
 
@@ -135,7 +130,6 @@ body {
       #120E0C 100%
     );
 }
-
 
 .hero-content {
   position: relative;
@@ -196,7 +190,6 @@ body {
   margin-top: 14px;
 }
 
-
 .hero-brand h1 {
   font-family:
     Georgia,
@@ -219,7 +212,6 @@ body {
   color: #C6A071;
 }
 
-
 .hero-brand-subtitle {
   margin-top: 10px;
 
@@ -231,7 +223,6 @@ body {
 
   color: #C6A071;
 }
-
 
 .hero-phrase {
   margin-top: 27px;
@@ -301,7 +292,6 @@ body {
   letter-spacing: 1.5px;
 }
 
-
 .links-label span {
   color: var(--dourado);
 
@@ -333,7 +323,6 @@ body {
     );
 }
 
-
 .links-section::before {
   content: "";
 
@@ -355,7 +344,6 @@ body {
       transparent 76%
     );
 }
-
 
 .links-wrapper {
   position: relative;
@@ -409,7 +397,6 @@ body {
   isolation: isolate;
 }
 
-
 .card-photo {
   position: absolute;
 
@@ -436,7 +423,7 @@ body {
 
 /* =====================================================
    CARD 02
-   MAIS ZOOM NO ROSTO
+   MANTIDO
 ===================================================== */
 
 .card-paciente {
@@ -458,7 +445,6 @@ body {
     );
 }
 
-
 .cutout {
   position: absolute;
 
@@ -470,7 +456,6 @@ body {
 
   max-width: none;
 }
-
 
 .cutout-paciente {
   height: 270%;
@@ -493,7 +478,7 @@ body {
 
 /* =====================================================
    CARD 04
-   MENOS ZOOM, MAIS ROSTO
+   MAIS PRÓXIMO, MAS MOSTRANDO O ROSTO
 ===================================================== */
 
 .card-vip {
@@ -507,7 +492,6 @@ body {
     );
 }
 
-
 .card-vip .vip-photo {
   position: absolute;
 
@@ -516,14 +500,13 @@ body {
   top: 0;
   left: 0;
 
-  width: 52%;
+  width: 58%;
   height: 100%;
 
   object-fit: cover;
 
-  object-position: 18% 48%;
+  object-position: 22% 50%;
 }
-
 
 .card-vip::before {
   content: "";
@@ -536,7 +519,7 @@ body {
   bottom: 0;
   left: 0;
 
-  width: 60%;
+  width: 64%;
 
   pointer-events: none;
 
@@ -576,7 +559,6 @@ body {
     );
 }
 
-
 .cutout-larissa {
   height: 220%;
 
@@ -598,7 +580,6 @@ body {
   z-index: 2;
 }
 
-
 .overlay-left {
   background:
     linear-gradient(
@@ -612,7 +593,6 @@ body {
       transparent 100%
     );
 }
-
 
 .overlay-right {
   background:
@@ -628,7 +608,6 @@ body {
       #120E0C 100%
     );
 }
-
 
 .card-vip .overlay-right {
   background:
@@ -661,16 +640,13 @@ body {
   width: 45%;
 }
 
-
 .card-content-left {
   left: 42px;
 }
 
-
 .card-content-right {
   right: 42px;
 }
-
 
 .card-eyebrow {
   display: block;
@@ -685,7 +661,6 @@ body {
 
   letter-spacing: 2px;
 }
-
 
 .card-content h2 {
   font-size:
@@ -702,7 +677,6 @@ body {
   letter-spacing: -0.8px;
 }
 
-
 .card-content p {
   margin-top: 10px;
 
@@ -718,7 +692,6 @@ body {
       0.72
     );
 }
-
 
 .card-line {
   width: 30px;
@@ -767,11 +740,9 @@ footer {
     align-items: flex-start;
   }
 
-
   .hero-content {
     padding-top: 34px;
   }
-
 
   .hero-symbol {
     width:
@@ -781,11 +752,9 @@ footer {
       );
   }
 
-
   .hero-brand {
     margin-top: 12px;
   }
-
 
   .hero-brand h1 {
     font-size:
@@ -796,7 +765,6 @@ footer {
       );
   }
 
-
   .hero-brand-subtitle {
     margin-top: 6px;
 
@@ -805,13 +773,11 @@ footer {
     letter-spacing: 2.8px;
   }
 
-
   .hero-phrase {
     margin-top: 18px;
 
     font-size: 11px;
   }
-
 
   .links-label {
     margin-top: 18px;
@@ -832,11 +798,9 @@ footer {
     font-size: 8px;
   }
 
-
   .links-label span {
     font-size: 15px;
   }
-
 
   .links-section {
     min-height: auto;
@@ -847,7 +811,6 @@ footer {
       34px;
   }
 
-
   .visual-card {
     height: 132px;
 
@@ -856,21 +819,17 @@ footer {
     border-radius: 21px;
   }
 
-
   .card-content {
     width: 49%;
   }
-
 
   .card-content-left {
     left: 18px;
   }
 
-
   .card-content-right {
     right: 18px;
   }
-
 
   .card-eyebrow {
     margin-bottom: 6px;
@@ -879,7 +838,6 @@ footer {
 
     letter-spacing: 1.2px;
   }
-
 
   .card-content h2 {
     font-size:
@@ -890,13 +848,11 @@ footer {
       );
   }
 
-
   .card-content p {
     margin-top: 6px;
 
     font-size: 7px;
   }
-
 
   .card-line {
     width: 20px;
@@ -913,7 +869,7 @@ footer {
   }
 
 
-  /* 02 - MAIS ZOOM */
+  /* 02 - MANTIDO */
 
   .cutout-paciente {
     height: 260%;
@@ -932,22 +888,23 @@ footer {
   }
 
 
-  /* 04 - MENOS ZOOM */
+  /* 04 - ROSTO MAIS PRÓXIMO */
 
   .card-vip .vip-photo {
-    width: 54%;
+    width: 60%;
     height: 100%;
 
     left: 0;
     top: 0;
 
+    object-fit: cover;
+
     object-position:
-      18% 47%;
+      22% 50%;
   }
 
-
   .card-vip::before {
-    width: 62%;
+    width: 66%;
   }
 
 
@@ -983,26 +940,21 @@ footer {
     min-height: 545px;
   }
 
-
   .hero-content {
     padding-top: 28px;
   }
-
 
   .hero-symbol {
     width: 56vw;
   }
 
-
   .hero-brand {
     margin-top: 11px;
   }
 
-
   .hero-brand h1 {
     font-size: 42px;
   }
-
 
   .hero-phrase {
     margin-top: 17px;
@@ -1010,33 +962,28 @@ footer {
     font-size: 10px;
   }
 
-
   .links-label {
     margin-top: 17px;
   }
-
 
   .visual-card {
     height: 122px;
   }
 
-
   .card-content-left {
     left: 15px;
   }
 
-
   .card-content-right {
     right: 15px;
   }
-
 
   .card-content h2 {
     font-size: 16px;
   }
 
 
-  /* 02 */
+  /* 02 - MANTIDO */
 
   .cutout-paciente {
     height: 255%;
@@ -1047,13 +994,19 @@ footer {
   }
 
 
-  /* 04 */
+  /* 04 - ROSTO MAIS PRÓXIMO */
 
   .card-vip .vip-photo {
-    width: 56%;
+    width: 62%;
+    height: 100%;
+
+    left: 0;
+    top: 0;
+
+    object-fit: cover;
 
     object-position:
-      18% 47%;
+      22% 50%;
   }
 
 
