@@ -47,7 +47,7 @@
   >
 
 
-  <!-- PRELOAD DAS IMAGENS DA PRIMEIRA DOBRA -->
+  <!-- PRIMEIRA DOBRA -->
 
   <link
     rel="preload"
@@ -61,8 +61,6 @@
     href="avaliacao.JPG"
   >
 
-
-  <!-- CSS -->
 
   <link
     rel="stylesheet"
@@ -83,17 +81,21 @@
 
   <header class="hero">
 
-    <div class="hero-glow"></div>
+    <div class="hero-light"></div>
 
     <div class="hero-content">
 
-      <img
-        src="logo-bulhoes.png"
-        alt="Bulhões Odontologia e Estética"
-        class="hero-logo"
-        fetchpriority="high"
-        decoding="async"
-      >
+      <div class="logo-area">
+
+        <img
+          src="logo-bulhoes.png"
+          alt="Bulhões Odontologia e Estética"
+          class="hero-logo"
+          fetchpriority="high"
+          decoding="async"
+        >
+
+      </div>
 
       <p class="hero-phrase">
         Naturalidade é o nosso maior luxo.
@@ -106,7 +108,6 @@
       href="#links"
       class="links-label"
       id="link-scroll"
-      aria-label="Ver links importantes"
     >
 
       <span>↓</span>
@@ -136,7 +137,7 @@
 
 
       <!-- ==================================================
-           01 - NOVO PACIENTE
+           01
       =================================================== -->
 
       <a
@@ -145,12 +146,11 @@
         href="https://wa.me/5513996300176"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Agende sua avaliação na Bulhões Odontologia"
       >
 
         <img
           src="avaliacao.JPG"
-          alt="Lentes Bulhões Odontologia"
+          alt="Sorriso Bulhões"
           class="card-photo"
           fetchpriority="high"
           decoding="async"
@@ -183,7 +183,7 @@
 
 
       <!-- ==================================================
-           02 - JÁ SOU PACIENTE
+           02
       =================================================== -->
 
       <a
@@ -192,16 +192,20 @@
         href="https://wa.me/551332236600"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Atendimento para pacientes Bulhões"
       >
 
-        <img
-          src="jasoupaciente.JPG"
-          alt="Paciente Bulhões Odontologia"
-          class="card-photo"
-          loading="lazy"
-          decoding="async"
-        >
+        <div class="portrait-area paciente-area">
+
+          <img
+            src="jasoupaciente.JPG"
+            alt="Paciente Bulhões"
+            class="portrait-photo paciente-photo"
+            loading="lazy"
+            decoding="async"
+          >
+
+        </div>
+
 
         <div class="card-overlay overlay-right"></div>
 
@@ -230,7 +234,7 @@
 
 
       <!-- ==================================================
-           03 - TRATAMENTOS
+           03
       =================================================== -->
 
       <a
@@ -239,12 +243,11 @@
         href="https://www.bulhoesodontologia.com.br/"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Conheça os tratamentos da Bulhões Odontologia"
       >
 
         <img
           src="tratamentos.jpg"
-          alt="Tratamentos Bulhões Odontologia"
+          alt="Tratamentos Bulhões"
           class="card-photo"
           loading="lazy"
           decoding="async"
@@ -277,7 +280,7 @@
 
 
       <!-- ==================================================
-           04 - GRUPO VIP
+           04
       =================================================== -->
 
       <a
@@ -286,13 +289,12 @@
         href="https://chat.whatsapp.com/KI5AoDcN8nwIQL6d205arW"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Entre no Grupo VIP da Bulhões Odontologia"
       >
 
         <img
           src="vip.png"
-          alt="Grupo VIP Bulhões Odontologia"
-          class="card-photo"
+          alt="Grupo VIP Bulhões"
+          class="card-photo vip-photo"
           loading="lazy"
           decoding="async"
         >
@@ -324,7 +326,7 @@
 
 
       <!-- ==================================================
-           05 - INSTITUTO BULHÕES
+           05
       =================================================== -->
 
       <a
@@ -333,16 +335,20 @@
         href="https://wa.me/551340427082"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Conheça os cursos do Instituto Bulhões"
       >
 
-        <img
-          src="larissa.JPG"
-          alt="Dra. Larissa Bulhões"
-          class="card-photo instituto-photo"
-          loading="lazy"
-          decoding="async"
-        >
+        <div class="portrait-area larissa-area">
+
+          <img
+            src="larissa.JPG"
+            alt="Dra. Larissa Bulhões"
+            class="portrait-photo larissa-photo"
+            loading="lazy"
+            decoding="async"
+          >
+
+        </div>
+
 
         <div class="card-overlay overlay-left"></div>
 
@@ -368,6 +374,7 @@
 
       </a>
 
+
     </div>
 
 
@@ -379,10 +386,7 @@
 
 
 
-  <!-- ==================================================
-       COMPORTAMENTO DO BOTÃO
-       Não existe scroll automático.
-  =================================================== -->
+  <!-- SOMENTE O BOTÃO PODE FAZER SCROLL -->
 
   <script>
 
@@ -391,25 +395,23 @@
     }
 
 
+    window.scrollTo(0, 0);
+
+
     const scrollButton =
-      document.getElementById(
-        "link-scroll"
-      );
+      document.getElementById("link-scroll");
 
 
     if (scrollButton) {
 
       scrollButton.addEventListener(
         "click",
-        function (event) {
+        function(event) {
 
           event.preventDefault();
 
-
           const links =
-            document.getElementById(
-              "links"
-            );
+            document.getElementById("links");
 
 
           if (links) {
@@ -427,10 +429,6 @@
     }
 
   </script>
-
-
-  <script src="script.js"></script>
-
 
 </body>
 
