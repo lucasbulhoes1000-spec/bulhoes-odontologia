@@ -1,493 +1,576 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+const HEADERS = [
+  "click_id",
+  "data_hora",
+  "destino",
+  "origem_link",
+  "utm_source",
+  "utm_medium",
+  "utm_campaign",
+  "utm_content",
+  "utm_term",
+  "fbclid",
+  "gclid",
+  "pagina",
+  "landing_page",
+  "first_referrer",
+  "nome",
+  "telefone",
+  "status_lead",
+  "venda",
+  "valor_venda",
+  "crm_id"
+];
 
-<head>
 
-  <meta charset="UTF-8">
+/* =====================================================
+   NOMES DAS ABAS
+===================================================== */
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+const ABA_LARISSA = "Larissa";
 
-  <title>Bulhões Odontologia</title>
+const ABA_BULHOES = "Bulhões Odontologia";
 
-  <meta
-    name="description"
-    content="Bulhões Odontologia e Estética. Naturalidade é o nosso maior luxo."
-  >
 
+/* =====================================================
+   LOCALIZAR / PREPARAR UMA ABA
+===================================================== */
 
-  <!-- =====================================================
-       GOOGLE ANALYTICS 4
-       BULHÕES ODONTOLOGIA
-       ID: G-L507RBK5JD
-  ====================================================== -->
+function setupAba(nomeAba) {
 
-  <script
-    async
-    src="https://www.googletagmanager.com/gtag/js?id=G-L507RBK5JD"
-  ></script>
+  const spreadsheet =
+    SpreadsheetApp
+      .getActiveSpreadsheet();
 
-  <script>
-    window.dataLayer = window.dataLayer || [];
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
+  let sheet =
+    spreadsheet
+      .getSheetByName(nomeAba);
 
-    gtag('js', new Date());
 
-    gtag('config', 'G-L507RBK5JD');
-  </script>
+  /*
+    Caso a aba não exista por algum motivo,
+    cria automaticamente.
+  */
 
+  if (!sheet) {
 
-  <!-- =====================================================
-       FONTES
-  ====================================================== -->
+    sheet =
+      spreadsheet
+        .insertSheet(nomeAba);
 
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
+  }
 
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  >
-
-
-  <!-- =====================================================
-       CSS
-  ====================================================== -->
-
-  <link
-    rel="stylesheet"
-    href="style.css"
-  >
-
-</head>
-
-
-<body>
-
-
-  <!-- =====================================================
-       FUNDO
-  ====================================================== -->
-
-  <div class="page-background"></div>
-
-
-
-  <!-- =====================================================
-       HERO
-  ====================================================== -->
-
-  <header class="hero">
-
-    <div class="hero-light"></div>
-
-
-    <div class="hero-content">
-
-
-      <!-- SÍMBOLO -->
-
-      <img
-        src="simbolo-bulhoes.png"
-        alt="Bulhões Odontologia"
-        class="hero-symbol"
-      >
-
-
-      <!-- MARCA -->
-
-      <div class="hero-brand">
-
-        <h1>
-          BULHÕES
-        </h1>
-
-        <div class="hero-brand-subtitle">
-          ODONTOLOGIA E ESTÉTICA
-        </div>
-
-      </div>
-
-
-      <!-- FRASE -->
-
-      <p class="hero-phrase">
-        Naturalidade é o nosso maior luxo.
-      </p>
-
-
-      <!-- LINKS IMPORTANTES -->
-
-      <div class="links-label">
-
-        <span>↓</span>
-
-        LINKS IMPORTANTES
-
-        <span>↓</span>
-
-      </div>
-
-
-    </div>
-
-  </header>
-
-
-
-  <!-- =====================================================
-       CARDS
-  ====================================================== -->
-
-  <main class="links-section">
-
-
-    <div class="links-wrapper">
-
-
-
-      <!-- =================================================
-           CARD 01
-           QUERO TRANSFORMAR MEU SORRISO
-      ================================================== -->
-
-      <a
-        href="https://wa.me/5513996300176?text=Olá%21%20Vim%20pelo%20Instagram%20da%20Bulhões%20e%20gostaria%20de%20agendar%20uma%20avaliação."
-        target="_blank"
-        rel="noopener noreferrer"
-        class="visual-card card-avaliacao"
-        data-ga-event="click_avaliacao"
-        data-ga-destination="whatsapp_avaliacao"
-      >
-
-
-        <img
-          src="avaliacao.JPG"
-          alt="Transformação de sorriso Bulhões"
-          class="card-photo"
-        >
-
-
-        <div class="card-overlay overlay-left"></div>
-
-
-        <div class="card-content card-content-left">
-
-          <span class="card-eyebrow">
-            BULHÕES ODONTOLOGIA
-          </span>
-
-          <h2>
-            QUERO TRANSFORMAR<br>
-            MEU SORRISO
-          </h2>
-
-          <p>
-            Agende sua avaliação
-          </p>
-
-          <div class="card-line"></div>
-
-        </div>
-
-
-      </a>
-
-
-
-      <!-- =================================================
-           CARD 02
-           JÁ SOU PACIENTE
-      ================================================== -->
-
-      <a
-        href="https://wa.me/551332236600?text=Olá%21%20Já%20sou%20paciente%20Bulhões%20e%20gostaria%20de%20falar%20com%20a%20equipe."
-        target="_blank"
-        rel="noopener noreferrer"
-        class="visual-card card-paciente"
-        data-ga-event="click_paciente"
-        data-ga-destination="whatsapp_paciente"
-      >
-
-
-        <!--
-          A imagem paciente-card2certo.JPG
-          é aplicada diretamente pelo CSS.
-        -->
-
-
-        <div class="card-overlay overlay-right"></div>
-
-
-        <div class="card-content card-content-right">
-
-          <span class="card-eyebrow">
-            ATENDIMENTO
-          </span>
-
-          <h2>
-            JÁ SOU PACIENTE<br>
-            BULHÕES
-          </h2>
-
-          <p>
-            Fale com nossa equipe
-          </p>
-
-          <div class="card-line"></div>
-
-        </div>
-
-
-      </a>
-
-
-
-      <!-- =================================================
-           CARD 03
-           SITE
-      ================================================== -->
-
-      <a
-        href="https://www.bulhoesodontologia.com.br/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="visual-card card-tratamentos"
-        data-ga-event="click_site"
-        data-ga-destination="site_bulhoes"
-      >
-
-
-        <img
-          src="tratamentos.jpg"
-          alt="Tratamentos Bulhões Odontologia"
-          class="card-photo"
-        >
-
-
-        <div class="card-overlay overlay-left"></div>
-
-
-        <div class="card-content card-content-left">
-
-          <span class="card-eyebrow">
-            ODONTOLOGIA E ESTÉTICA
-          </span>
-
-          <h2>
-            CONHEÇA NOSSOS<br>
-            TRATAMENTOS
-          </h2>
-
-          <p>
-            Visite o nosso site
-          </p>
-
-          <div class="card-line"></div>
-
-        </div>
-
-
-      </a>
-
-
-
-      <!-- =================================================
-           CARD 04
-           GRUPO VIP
-      ================================================== -->
-
-      <a
-        href="https://chat.whatsapp.com/KI5AoDcN8nwIQL6d205arW"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="visual-card card-vip"
-        data-ga-event="click_grupo_vip"
-        data-ga-destination="whatsapp_grupo_vip"
-      >
-
-
-        <img
-          src="vip.png"
-          alt="Grupo VIP Bulhões"
-          class="vip-photo"
-        >
-
-
-        <div class="card-overlay overlay-right"></div>
-
-
-        <div class="card-content card-content-right">
-
-          <span class="card-eyebrow">
-            BULHÕES ODONTOLOGIA
-          </span>
-
-          <h2>
-            GRUPO<br>
-            VIP
-          </h2>
-
-          <p>
-            Faça parte do nosso grupo
-          </p>
-
-          <div class="card-line"></div>
-
-        </div>
-
-
-      </a>
-
-
-
-      <!-- =================================================
-           CARD 05
-           INSTITUTO BULHÕES
-      ================================================== -->
-
-      <a
-        href="https://wa.me/551340427082?text=Olá%21%20Vim%20pela%20página%20da%20Bulhões%20e%20gostaria%20de%20conhecer%20os%20cursos%20do%20Instituto%20Bulhões."
-        target="_blank"
-        rel="noopener noreferrer"
-        class="visual-card card-instituto"
-        data-ga-event="click_instituto"
-        data-ga-destination="whatsapp_instituto"
-      >
-
-
-        <img
-          src="larissa-sem-fundo.png"
-          alt="Dra. Larissa Bulhões"
-          class="cutout cutout-larissa"
-        >
-
-
-        <div class="card-overlay overlay-left"></div>
-
-
-        <div class="card-content card-content-left">
-
-          <span class="card-eyebrow">
-            PARA DENTISTAS
-          </span>
-
-          <h2>
-            INSTITUTO<br>
-            BULHÕES
-          </h2>
-
-          <p>
-            Conheça nossos cursos
-          </p>
-
-          <div class="card-line"></div>
-
-        </div>
-
-
-      </a>
-
-
-
-      <!-- =================================================
-           FOOTER
-      ================================================== -->
-
-      <footer>
-        © 2026 BULHÕES ODONTOLOGIA
-      </footer>
-
-
-    </div>
-
-  </main>
-
-
-
-  <!-- =====================================================
-       RASTREAMENTO DOS CLIQUES
-       GOOGLE ANALYTICS
-  ====================================================== -->
-
-  <script>
-
-    document.addEventListener(
-      'DOMContentLoaded',
-      function () {
-
-        const trackedLinks =
-          document.querySelectorAll(
-            '[data-ga-event]'
-          );
-
-
-        trackedLinks.forEach(
-          function (link) {
-
-            link.addEventListener(
-              'click',
-              function () {
-
-                const eventName =
-                  link.getAttribute(
-                    'data-ga-event'
-                  );
-
-                const destination =
-                  link.getAttribute(
-                    'data-ga-destination'
-                  );
-
-
-                if (
-                  typeof gtag === 'function'
-                ) {
-
-                  gtag(
-                    'event',
-                    eventName,
-                    {
-
-                      destination:
-                        destination,
-
-                      link_url:
-                        link.href,
-
-                      page_location:
-                        window.location.href
-
-                    }
-                  );
-
-                }
-
-              }
-            );
-
-          }
-        );
-
-      }
+  const lastColumn =
+    Math.max(
+      sheet.getLastColumn(),
+      1
     );
 
-  </script>
+
+  const currentHeaders =
+    sheet
+      .getRange(
+        1,
+        1,
+        1,
+        lastColumn
+      )
+      .getValues()[0]
+      .map(
+        value =>
+          String(value).trim()
+      );
 
 
-</body>
+  /*
+    Adiciona apenas colunas que ainda
+    não existam na planilha.
 
-</html>
+    Não apaga nem reorganiza dados antigos.
+  */
+
+  HEADERS.forEach(
+    header => {
+
+      if (
+        !currentHeaders.includes(header)
+      ) {
+
+        const newColumn =
+          sheet.getLastColumn() + 1;
+
+
+        sheet
+          .getRange(
+            1,
+            newColumn
+          )
+          .setValue(header);
+
+
+        currentHeaders.push(header);
+
+      }
+
+    }
+  );
+
+
+  /*
+    Formatação básica.
+  */
+
+  const headerRange =
+    sheet.getRange(
+      1,
+      1,
+      1,
+      sheet.getLastColumn()
+    );
+
+
+  headerRange.setFontWeight("bold");
+
+  sheet.setFrozenRows(1);
+
+
+  return sheet;
+
+}
+
+
+/* =====================================================
+   CONFIGURAR TODA A PLANILHA
+===================================================== */
+
+function setupPlanilha() {
+
+  setupAba(
+    ABA_LARISSA
+  );
+
+
+  setupAba(
+    ABA_BULHOES
+  );
+
+
+  SpreadsheetApp.flush();
+
+}
+
+
+/* =====================================================
+   IDENTIFICAR DE QUAL LP VEIO O CLIQUE
+===================================================== */
+
+function identificarAba(data) {
+
+  /*
+    Junta os campos que podem conter
+    o endereço da página.
+  */
+
+  const origem =
+    [
+      data.pagina || "",
+      data.landing_page || "",
+      data.origem_link || "",
+      data.projeto || ""
+    ]
+      .join(" ")
+      .toLowerCase();
+
+
+  /*
+    LP DA BULHÕES
+
+    Funciona com o endereço atual Vercel
+    e também continuará funcionando caso
+    depois seja usado um domínio contendo Bulhões.
+  */
+
+  if (
+    origem.includes(
+      "bulhoes-odontologia"
+    ) ||
+    origem.includes(
+      "bulhoesodontologia"
+    ) ||
+    origem.includes(
+      "bulhoes odontologia"
+    )
+  ) {
+
+    return ABA_BULHOES;
+
+  }
+
+
+  /*
+    Todo registro antigo e todo registro
+    da LP da Larissa continua indo para Larissa.
+  */
+
+  return ABA_LARISSA;
+
+}
+
+
+/* =====================================================
+   CRIAR ID DE CLIQUE CASO NÃO VENHA DO SITE
+===================================================== */
+
+function gerarClickId(prefixo) {
+
+  const agora =
+    new Date()
+      .getTime()
+      .toString(36)
+      .toUpperCase();
+
+
+  const aleatorio =
+    Math
+      .random()
+      .toString(36)
+      .substring(2, 7)
+      .toUpperCase();
+
+
+  return (
+    prefixo +
+    "-" +
+    agora +
+    aleatorio
+  );
+
+}
+
+
+/* =====================================================
+   RECEBER CLIQUES
+===================================================== */
+
+function doPost(e) {
+
+  try {
+
+    /*
+      Validação básica.
+    */
+
+    if (
+      !e ||
+      !e.postData ||
+      !e.postData.contents
+    ) {
+
+      throw new Error(
+        "Nenhum dado recebido."
+      );
+
+    }
+
+
+    /*
+      Dados enviados pela LP.
+    */
+
+    const data =
+      JSON.parse(
+        e.postData.contents
+      );
+
+
+    /*
+      Descobre automaticamente qual aba usar.
+    */
+
+    const nomeAba =
+      identificarAba(data);
+
+
+    /*
+      Prepara apenas a aba necessária.
+    */
+
+    const sheet =
+      setupAba(nomeAba);
+
+
+    /*
+      Se por algum motivo o site não enviar
+      click_id, criamos um aqui.
+
+      LARI = LP Larissa
+      BULHOES = LP Bulhões
+    */
+
+    const prefixo =
+      nomeAba === ABA_BULHOES
+        ? "BULHOES"
+        : "LARI";
+
+
+    const clickId =
+      data.click_id ||
+      gerarClickId(prefixo);
+
+
+    /*
+      Lê a ordem REAL das colunas existentes
+      naquela aba.
+
+      Isso é importante porque não precisamos
+      reorganizar a planilha que já está pronta.
+    */
+
+    const currentHeaders =
+      sheet
+        .getRange(
+          1,
+          1,
+          1,
+          sheet.getLastColumn()
+        )
+        .getValues()[0]
+        .map(
+          value =>
+            String(value).trim()
+        );
+
+
+    /*
+      Monta a nova linha de acordo
+      com os títulos da planilha.
+    */
+
+    const row =
+      currentHeaders.map(
+        header => {
+
+          switch (header) {
+
+            case "click_id":
+
+              return clickId;
+
+
+            case "data_hora":
+
+              return (
+                data.data_hora ||
+                new Date().toISOString()
+              );
+
+
+            case "destino":
+
+              return (
+                data.destino ||
+                ""
+              );
+
+
+            case "origem_link":
+
+              return (
+                data.origem_link ||
+                ""
+              );
+
+
+            case "utm_source":
+
+              return (
+                data.utm_source ||
+                ""
+              );
+
+
+            case "utm_medium":
+
+              return (
+                data.utm_medium ||
+                ""
+              );
+
+
+            case "utm_campaign":
+
+              return (
+                data.utm_campaign ||
+                ""
+              );
+
+
+            case "utm_content":
+
+              return (
+                data.utm_content ||
+                ""
+              );
+
+
+            case "utm_term":
+
+              return (
+                data.utm_term ||
+                ""
+              );
+
+
+            case "fbclid":
+
+              return (
+                data.fbclid ||
+                ""
+              );
+
+
+            case "gclid":
+
+              return (
+                data.gclid ||
+                ""
+              );
+
+
+            case "pagina":
+
+              return (
+                data.pagina ||
+                ""
+              );
+
+
+            case "landing_page":
+
+              return (
+                data.landing_page ||
+                ""
+              );
+
+
+            case "first_referrer":
+
+              return (
+                data.first_referrer ||
+                ""
+              );
+
+
+            case "nome":
+
+              return (
+                data.nome ||
+                ""
+              );
+
+
+            case "telefone":
+
+              return (
+                data.telefone ||
+                ""
+              );
+
+
+            case "status_lead":
+
+              return (
+                data.status_lead ||
+                ""
+              );
+
+
+            case "venda":
+
+              return (
+                data.venda ||
+                ""
+              );
+
+
+            case "valor_venda":
+
+              return (
+                data.valor_venda ||
+                ""
+              );
+
+
+            case "crm_id":
+
+              return (
+                data.crm_id ||
+                ""
+              );
+
+
+            default:
+
+              return "";
+
+          }
+
+        }
+      );
+
+
+    /*
+      Salva o clique.
+    */
+
+    sheet.appendRow(row);
+
+
+    SpreadsheetApp.flush();
+
+
+    /*
+      Retorno do Web App.
+    */
+
+    return ContentService
+      .createTextOutput(
+        JSON.stringify(
+          {
+            success: true,
+
+            click_id:
+              clickId,
+
+            aba:
+              nomeAba
+          }
+        )
+      )
+      .setMimeType(
+        ContentService.MimeType.JSON
+      );
+
+  }
+
+  catch (error) {
+
+    return ContentService
+      .createTextOutput(
+        JSON.stringify(
+          {
+            success: false,
+
+            error:
+              error.toString()
+          }
+        )
+      )
+      .setMimeType(
+        ContentService.MimeType.JSON
+      );
+
+  }
+
+}
