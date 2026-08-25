@@ -83,8 +83,10 @@ body {
 .hero-light {
   position: absolute;
   top: -80px;
+
   width: 850px;
   height: 850px;
+
   border-radius: 50%;
 
   background:
@@ -119,12 +121,14 @@ body {
 .hero-content {
   position: relative;
   z-index: 3;
+
   width: 100%;
   padding-top: 78px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+
   text-align: center;
 }
 
@@ -136,6 +140,7 @@ body {
 .hero-symbol {
   width: min(310px, 44vw);
   height: auto;
+
   object-fit: contain;
   opacity: 0.72;
 
@@ -163,26 +168,33 @@ body {
 
 .hero-brand h1 {
   font-family: Georgia, "Times New Roman", serif;
+
   font-size: clamp(48px, 5vw, 76px);
   line-height: 0.95;
+
   font-weight: 400;
   letter-spacing: -2px;
+
   color: #C6A071;
 }
 
 .hero-brand-subtitle {
   margin-top: 10px;
+
   font-size: 9px;
   font-weight: 600;
   letter-spacing: 4px;
+
   color: #C6A071;
 }
 
 .hero-phrase {
   margin-top: 27px;
+
   font-size: clamp(16px, 1.5vw, 20px);
   font-weight: 400;
   letter-spacing: 0.7px;
+
   color: #D4AC7C;
 }
 
@@ -201,6 +213,7 @@ body {
   gap: 24px;
 
   width: min(440px, calc(100% - 40px));
+
   padding: 17px 25px;
 
   border: 1px solid rgba(197, 154, 101, 0.72);
@@ -212,6 +225,7 @@ body {
   -webkit-backdrop-filter: blur(12px);
 
   text-decoration: none;
+
   color: white;
 
   font-size: 11px;
@@ -231,6 +245,7 @@ body {
 
 .links-section {
   position: relative;
+
   width: 100%;
   min-height: 100vh;
 
@@ -247,6 +262,7 @@ body {
 
 .links-section::before {
   content: "";
+
   position: absolute;
 
   top: -210px;
@@ -281,6 +297,7 @@ body {
 
 .visual-card {
   position: relative;
+
   display: block;
 
   width: 100%;
@@ -289,6 +306,7 @@ body {
   margin-bottom: 16px;
 
   overflow: hidden;
+
   border-radius: 30px;
 
   border: 1px solid rgba(204, 188, 166, 0.21);
@@ -299,7 +317,8 @@ body {
   text-decoration: none;
 
   box-shadow:
-    0 18px 55px rgba(0, 0, 0, 0.18);
+    0 18px 55px
+    rgba(0, 0, 0, 0.18);
 
   isolation: isolate;
 }
@@ -329,17 +348,12 @@ body {
 /* =====================================================
    CARD 02
    NOVA FOTO DO SORRISO
+   AJUSTE: FOTO MAIS PARA A ESQUERDA
 ===================================================== */
 
 .card-paciente {
   background: #120E0C;
 }
-
-/*
-  A foto ocupa o card inteiro.
-  O degradê vai escurecendo a região direita
-  onde fica o texto.
-*/
 
 .card-paciente::before {
   content: "";
@@ -354,16 +368,12 @@ body {
   background-size: cover;
 
   /*
-    Centraliza o sorriso e mantém boa parte
-    da boca visível no lado esquerdo.
+     Antes estava 42%.
+     Agora está em 30% para trazer
+     o enquadramento mais para a esquerda.
   */
-  background-position: 42% 51%;
+  background-position: 30% 51%;
 }
-
-/*
-  Gradiente suave entre a fotografia
-  e o fundo escuro do card.
-*/
 
 .card-paciente::after {
   content: "";
@@ -378,21 +388,17 @@ body {
   background:
     linear-gradient(
       90deg,
-      rgba(18, 14, 12, 0.04) 0%,
-      rgba(18, 14, 12, 0.04) 25%,
-      rgba(18, 14, 12, 0.10) 34%,
-      rgba(18, 14, 12, 0.30) 45%,
-      rgba(18, 14, 12, 0.62) 57%,
-      rgba(18, 14, 12, 0.87) 68%,
-      #120E0C 80%,
+      rgba(18, 14, 12, 0.02) 0%,
+      rgba(18, 14, 12, 0.02) 24%,
+      rgba(18, 14, 12, 0.08) 33%,
+      rgba(18, 14, 12, 0.24) 43%,
+      rgba(18, 14, 12, 0.55) 54%,
+      rgba(18, 14, 12, 0.82) 65%,
+      rgba(18, 14, 12, 0.96) 77%,
+      #120E0C 88%,
       #120E0C 100%
     );
 }
-
-/*
-  Esconde qualquer imagem antiga do card 2
-  que ainda esteja no HTML.
-*/
 
 .card-paciente .card-photo,
 .card-paciente .cutout-paciente,
@@ -559,12 +565,12 @@ body {
     linear-gradient(
       90deg,
       transparent 0%,
-      transparent 31%,
-      rgba(18, 12, 10, 0.04) 39%,
-      rgba(18, 12, 10, 0.18) 47%,
-      rgba(18, 12, 10, 0.45) 57%,
-      rgba(18, 12, 10, 0.74) 68%,
-      rgba(18, 12, 10, 0.94) 82%,
+      transparent 30%,
+      rgba(18, 12, 10, 0.03) 38%,
+      rgba(18, 12, 10, 0.15) 46%,
+      rgba(18, 12, 10, 0.40) 56%,
+      rgba(18, 12, 10, 0.71) 67%,
+      rgba(18, 12, 10, 0.93) 81%,
       #120E0C 100%
     );
 }
@@ -621,6 +627,7 @@ body {
 
 .card-content h2 {
   font-size: clamp(24px, 2.4vw, 30px);
+
   line-height: 1.02;
 
   font-weight: 600;
@@ -696,6 +703,7 @@ footer {
 
   .hero-brand-subtitle {
     margin-top: 6px;
+
     font-size: 6px;
     letter-spacing: 2.8px;
   }
@@ -776,23 +784,24 @@ footer {
 
   /* =====================================================
      CARD 02 MOBILE
+     MAIS PARA A ESQUERDA
   ===================================================== */
 
   .card-paciente::before {
     background-size: cover;
-    background-position: 43% 51%;
+    background-position: 28% 51%;
   }
 
   .card-paciente::after {
     background:
       linear-gradient(
         90deg,
-        rgba(18, 14, 12, 0.03) 0%,
-        rgba(18, 14, 12, 0.03) 27%,
-        rgba(18, 14, 12, 0.12) 37%,
-        rgba(18, 14, 12, 0.38) 48%,
-        rgba(18, 14, 12, 0.70) 59%,
-        rgba(18, 14, 12, 0.91) 70%,
+        rgba(18, 14, 12, 0.02) 0%,
+        rgba(18, 14, 12, 0.02) 25%,
+        rgba(18, 14, 12, 0.10) 35%,
+        rgba(18, 14, 12, 0.34) 46%,
+        rgba(18, 14, 12, 0.66) 58%,
+        rgba(18, 14, 12, 0.90) 70%,
         #120E0C 83%,
         #120E0C 100%
       );
@@ -901,11 +910,14 @@ footer {
   }
 
 
-  /* CARD 02 */
+  /* =====================================================
+     CARD 02 CELULAR PEQUENO
+     MAIS PARA A ESQUERDA
+  ===================================================== */
 
   .card-paciente::before {
     background-size: cover;
-    background-position: 43% 51%;
+    background-position: 26% 51%;
   }
 
 
