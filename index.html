@@ -52,6 +52,56 @@
 
 
   <!-- =====================================================
+       META PIXEL — BIO BULHÕES
+  ====================================================== -->
+
+<!--
+  Pixel da Meta para a página de links da Bulhões Odontologia (bulhoes-odontologia.vercel.app)
+  Colar dentro do <head>, depois do Google Analytics. Não mexe no GA4 nem na planilha que já existem.
+
+  Eventos enviados ao pixel 958903630140001 (PIXEL - BIO BULHÕES ODONTOLOGIA):
+    ao abrir a página ........ PageView + CliqueBio
+    Quero transformar ........ Contact + WhatsAppAvaliacao
+    Já sou paciente .......... WhatsAppPaciente
+    Conheça os tratamentos ... CliqueSite
+    Grupo VIP ................ GrupoVIP
+    Instituto Bulhões ........ WhatsAppInstituto
+  O nome do evento leva o botão porque a Meta apaga parâmetros personalizados em pixel de clínica.
+-->
+<script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+  fbq('init', '958903630140001');
+  fbq('track', 'PageView');
+  fbq('trackCustom', 'CliqueBio');
+
+  (function () {
+    var EVENTOS = {
+      whatsapp_avaliacao: 'WhatsAppAvaliacao',
+      whatsapp_paciente: 'WhatsAppPaciente',
+      site_bulhoes: 'CliqueSite',
+      whatsapp_grupo_vip: 'GrupoVIP',
+      whatsapp_instituto: 'WhatsAppInstituto'
+    };
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest && e.target.closest('a[data-ga-destination]');
+      if (!link) return;
+      var evento = EVENTOS[link.getAttribute('data-ga-destination')];
+      if (!evento) return;
+      if (evento === 'WhatsAppAvaliacao') fbq('track', 'Contact');
+      fbq('trackCustom', evento);
+    }, true);
+  })();
+</script>
+<noscript><img height="1" width="1" style="display:none" alt=""
+  src="https://www.facebook.com/tr?id=958903630140001&ev=PageView&noscript=1"></noscript>
+
+
+  <!-- =====================================================
        FONTES
   ====================================================== -->
 
