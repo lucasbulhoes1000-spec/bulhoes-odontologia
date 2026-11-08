@@ -486,9 +486,10 @@
 
   <!-- =====================================================
        RASTREAMENTO
-       GA4 + GOOGLE SHEETS
+       GA4 + LUME (a planilha foi desligada em 08/11/2026)
   ====================================================== -->
 
+  <script src="lume-clique.js"></script>
   <script>
 
     /* =====================================================
@@ -639,7 +640,7 @@
        ENVIAR PARA GOOGLE SHEETS
     ====================================================== */
 
-    function sendToSheets(destination) {
+    function sendToSheets(destination, codigoLume) {
 
       const payload = {
 
@@ -728,9 +729,18 @@
           "",
 
         crm_id:
-          ""
+          "",
+
+        codigo:
+          codigoLume || ""
 
       };
+
+      /* (08/11/2026) o clique vai direto para o Lume */
+      if (window.LumeClique) {
+        window.LumeClique.registrar(payload);
+        return;
+      }
 
 
       /*
@@ -853,8 +863,17 @@
                    GOOGLE SHEETS
                 ========================= */
 
+                /* (08/11/2026) link do WhatsApp: código invisível no fim da mensagem */
+                let codigoLume = "";
+                if (window.LumeClique && /wa\.me\//.test(link.href)) {
+                  if (!link.getAttribute("data-wa-base")) link.setAttribute("data-wa-base", link.href);
+                  codigoLume = window.LumeClique.codigo();
+                  link.href = window.LumeClique.linkComCodigo(link.getAttribute("data-wa-base"), codigoLume);
+                }
+
                 sendToSheets(
-                  sheetDestination
+                  sheetDestination,
+                  codigoLume
                 );
 
               }
